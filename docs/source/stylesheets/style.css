@@ -1,0 +1,30 @@
+/* body {
+    background-image: url("../figures/grid.png");
+    background-repeat: no-repeat;
+} */
+
+/* Style the highlighting elements */
+i, em {
+    color: rgb(117, 117, 117);
+}
+
+i:hover, em:hover {
+    color: rgb(186, 104, 200);
+}
+
+/* Apply the rule to break long strings naturally */
+i, em {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-all;
+}
+
+/* Make the generated function blocks more readable */
+.doc-function {
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+}
+
+.doc-module-name, .doc-class-name, .doc-function-name {
+    color: rgb(0, 150, 136);
+}

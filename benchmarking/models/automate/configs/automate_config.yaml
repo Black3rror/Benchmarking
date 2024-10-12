@@ -1,0 +1,13 @@
+software_platform: null   # Should be set to one of the following: ['TFLM', 'EI', 'Ekkono', 'eAI_Translator'].
+hardware_platform: null   # The hardware platform to be used.
+
+linkers_dir: linkers
+hardware_platform_path: benchmarking/models/automate/hardware_types/${hardware_platform}/hardware.py
+save_path: "benchmarking_results/benchmarking_result.xlsx"
+
+EI_general_porting_dir: benchmarking/models/automate/EI_general_porting/general
+
+arena_finder: false
+
+benchmark_overall_timeout: 600
+benchmark_silence_timeout: 10

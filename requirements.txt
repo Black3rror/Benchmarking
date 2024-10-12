@@ -1,0 +1,17 @@
+colorama == 0.4.6
+hydra-core == 1.3.2
+librosa == 0.10.2.post1
+numpy == 1.26.4
+openpyxl == 3.1.2
+pandas == 2.2.1
+pyserial == 3.5
+setuptools == 69.0.3
+tensorflow == 2.15.0
+tensorflow-datasets == 4.9.4
+tensorflow-model-optimization == 0.7.5
+tqdm == 4.66.1
+wandb == 0.16.3
+
+# The benchmarking/models/Ekkono part of the project requires the Ekkono SDK to be installed. The SDK is not available on PyPI, so it must be installed manually.
+# We've put the SDK wheel file in the following location, but cannot share the file as it is proprietary to Ekkono.
+# benchmarking/models/platforms/Ekkono/ekkono-sdk/primer/python/w64-amd64/3.11/ekkono.primer-23.10-cp311-cp311-win_amd64.whl

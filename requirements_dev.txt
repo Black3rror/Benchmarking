@@ -1,0 +1,8 @@
+# pre-commit
+pre-commit >= 3.5.0
+
+# docs
+mkdocs-material >= 4.8.0
+mkdocstrings
+mkdocstrings[python]
+mkdocs-glightbox == 0.4.0

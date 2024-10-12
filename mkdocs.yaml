@@ -1,0 +1,94 @@
+site_name: Benchmarking
+site_author: Amin
+docs_dir: docs/source
+
+theme:
+  language: en
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: light blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.indexes
+    - navigation.footer
+    - content.code.copy
+    - content.code.annotate
+    - content.tooltips
+    - search.suggest
+    - search.highlight
+
+markdown_extensions:
+  - abbr
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.snippets
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
+  - glightbox
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_root_heading: true
+            separate_signature: true
+            show_signature_annotations: true
+            docstring_options:
+              returns_named_value: false
+
+nav:
+  - Home: index.md
+  - How To Use: how_to_use.md
+  - Results:
+    - results/index.md
+    - TFLM Quantizations: results/TFLM_quantizations.md
+    - TFLM Pruning and Clustering: results/TFLM_pruning_and_clustering.md
+    - TFLM vs Edge Impulse: results/TFLM_vs_Edge_Impulse.md
+    - TFLM vs Ekkono: results/TFLM_vs_Ekkono.md
+    - TFLM vs eAI Translator: results/TFLM_vs_eAI_Translator.md
+    - RNN, LSTM, GRU: results/RNN_LSTM_GRU.md
+    - Compiler Optimization Levels: results/Compiler_optimization_levels.md
+    - Importance of FPU: results/Importance_of_FPU.md
+    - STM vs Renesas: results/STM_vs_Renesas.md
+    - GCC vs CCRX: results/GCC_vs_CCRX.md
+  - API Reference:
+    - Main: api/main.md
+    - Platforms:
+      - TensorFlow: api/platforms/tensorflow.md
+      - TFLite: api/platforms/tflite.md
+      - TFLM: api/platforms/tflm.md
+      - Edge Impulse: api/platforms/EI.md
+      - Ekkono: api/platforms/ekkono.md
+      - eAI Translator: api/platforms/eAI_Translator.md
+    - Datasets: api/datasets/data_template.md
+    - Automate: api/automate/automate.md
+    - Utilities:
+      - Utils: api/utils/utils.md
+      - Result Plotter: api/utils/result_plotter.md
+
+extra_css:
+  - stylesheets/style.css

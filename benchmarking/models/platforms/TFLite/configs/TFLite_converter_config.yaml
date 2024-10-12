@@ -1,0 +1,23 @@
+# The script will iteratively populate the following parameter for each item in the model_generator's output
+model_base_dir: null
+
+linkers_dir: linkers
+tf_model_path: ${model_base_dir}/tf/model/saved_model_format
+representative_data_path: ${model_base_dir}/data/representative_data.npy
+tflite_save_dir: ${model_base_dir}/tflite
+
+conversion_timeout: 300     # The timeout for each conversion in seconds
+optimizations:              # The optimizations to apply during conversion
+    - basic
+    # - q_dynamic
+    # - q_full_int
+    - q_full_int_only
+    # - q_16x8
+    # - q_16x8_int_only
+    # - q_float16
+    # - p_10
+    # - p_50
+    # - p_90
+    # - c_4
+    # - c_16
+    # - p_25 + c_16 + q_full_int_only
