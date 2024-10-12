@@ -1,0 +1,1674 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Amin">
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../results/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
+    
+    
+      
+        <title>How To Use - Benchmarking</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../stylesheets/style.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#how-to-use" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Benchmarking" class="md-header__button md-logo" aria-label="Benchmarking" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Benchmarking
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              How To Use
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Benchmarking" class="md-nav__button md-logo" aria-label="Benchmarking" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Benchmarking
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    How To Use
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    How To Use
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#project-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edge-impulse-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge Impulse secrets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ekkono-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ekkono SDK
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stm32cubeide" class="md-nav__link">
+    <span class="md-ellipsis">
+      STM32CubeIDE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stm32cubeclt" class="md-nav__link">
+    <span class="md-ellipsis">
+      STM32CubeCLT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renesas-e2-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renesas e2 studio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renesas-flash-programmer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renesas Flash Programmer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-tf-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate TF models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-ekkono-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate Ekkono models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convert-to-tflite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convert to TFLite
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convert-to-tflm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convert to TFLM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convert-to-edge-impulse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convert to Edge Impulse
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convert-to-eai-translator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convert to eAI Translator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-on-nucleo-l4r5zirenesasrx65n" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test on NUCLEO-L4R5ZI/RenesasRX65N
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bonus-result-plotter" class="md-nav__link">
+    <span class="md-ellipsis">
+      (Bonus) Result plotter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../results/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Results
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Results
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../results/TFLM_quantizations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TFLM Quantizations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../results/TFLM_pruning_and_clustering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TFLM Pruning and Clustering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../results/TFLM_vs_Edge_Impulse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TFLM vs Edge Impulse
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../results/TFLM_vs_Ekkono/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TFLM vs Ekkono
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../results/TFLM_vs_eAI_Translator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TFLM vs eAI Translator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../results/RNN_LSTM_GRU/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RNN, LSTM, GRU
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../results/Compiler_optimization_levels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compiler Optimization Levels
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../results/Importance_of_FPU/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Importance of FPU
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../results/STM_vs_Renesas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    STM vs Renesas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../results/GCC_vs_CCRX/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GCC vs CCRX
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API Reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/main/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Main
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Platforms
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Platforms
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/platforms/tensorflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TensorFlow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/platforms/tflite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TFLite
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/platforms/tflm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TFLM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/platforms/EI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Edge Impulse
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/platforms/ekkono/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ekkono
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/platforms/eAI_Translator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    eAI Translator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/datasets/data_template/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/automate/automate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Utilities
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Utilities
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/utils/utils/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Utils
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/utils/result_plotter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Result Plotter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#project-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edge-impulse-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge Impulse secrets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ekkono-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ekkono SDK
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stm32cubeide" class="md-nav__link">
+    <span class="md-ellipsis">
+      STM32CubeIDE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stm32cubeclt" class="md-nav__link">
+    <span class="md-ellipsis">
+      STM32CubeCLT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renesas-e2-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renesas e2 studio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renesas-flash-programmer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renesas Flash Programmer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-tf-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate TF models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-ekkono-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate Ekkono models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convert-to-tflite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convert to TFLite
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convert-to-tflm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convert to TFLM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convert-to-edge-impulse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convert to Edge Impulse
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convert-to-eai-translator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convert to eAI Translator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-on-nucleo-l4r5zirenesasrx65n" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test on NUCLEO-L4R5ZI/RenesasRX65N
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bonus-result-plotter" class="md-nav__link">
+    <span class="md-ellipsis">
+      (Bonus) Result plotter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="how-to-use">How To Use</h1>
+<p>It is easy to use the <em>Benchmarking</em> tool. You just need to:</p>
+<ol>
+<li>
+<p>Clone the repository and navigate to the root directory of the project.
+    <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Black3rror/Benchmarking.git
+<span class="nb">cd</span><span class="w"> </span>Benchmarking
+</code></pre></div></p>
+</li>
+<li>
+<p class="annotate">Run the <em>main</em> Python script. (1)</p>
+<ol>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> We recommend running the script inside a virtual environment like Conda.</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label><label for="__tabbed_1_2">Makefile</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>benchmarking.main
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p class="annotate"><div class="highlight"><pre><span></span><code>make<span class="w"> </span><span class="c1"># (1)!</span>
+</code></pre></div></p>
+<ol>
+<li>The Makefile is a wrapper around the Python script. It will run the script with the same command as in <em>Python</em>. It exists just for convenience.</li>
+</ol>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Follow the instructions on the screen.</p>
+</li>
+</ol>
+<div class="admonition info">
+<p>On the first run, the script will automatically install the necessary dependencies for itself. On the second run, the user can ask the script to install any additional Python dependencies required for the benchmarking process. Third time is the charm! You should be greeted with the tool's main menu, where you'll be asked to choose your desired action.</p>
+</div>
+<h2 id="project-setup">Project Setup</h2>
+<p>After cloning the repository, several tools need to be connected to the project in order to provide certain functionalities. While these requirements are mostly guided through the instructions of the <em>main</em> script, we will provide more detailed explanations here.</p>
+<h3 id="edge-impulse-secrets">Edge Impulse secrets</h3>
+<p><small><span style="color:rgb(156, 39, 176);"> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.41 11.58-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 .59 1.42l9 9A2 2 0 0 0 13 22a2 2 0 0 0 1.41-.59l7-7A2 2 0 0 0 22 13a2 2 0 0 0-.59-1.42M13 20l-9-9V4h7l9 9M6.5 5A1.5 1.5 0 1 1 5 6.5 1.5 1.5 0 0 1 6.5 5"/></svg></span> </span> Edge Impulse v1.56.13 (date 12-09-2024) was used in our tests.</small></p>
+<p>To use the <em>Convert to Edge Impulse</em> module, you need to provide your Edge Impulse API Key and Project ID. For this purpose, you need to have an account on Edge Impulse. If you don't have one, you can create it <a href="https://www.edgeimpulse.com">here</a>.</p>
+<p>Once your account is set up, locate the API Key and Project ID:</p>
+<ul>
+<li>
+<p class="annotate">The API key can be found in the <em>Keys</em> section of your project. (1)</p>
+<ol>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> You can also access this page by its address: <em>https://studio.edgeimpulse.com/studio/{project_id}/keys</em>.</li>
+</ol>
+</li>
+<li>
+<p class="annotate">The Project ID can be found on the project's main page under the <em>Project info</em> section. (1)</p>
+<ol>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> You can also find it by looking at the URL of the page: <em>https://studio.edgeimpulse.com/studio/<ins>{project_id}</ins></em>.</li>
+</ol>
+</li>
+</ul>
+<p>After obtaining this information, provide it to the project's <em>main</em> script in order to make the connection. The script will ask you for the API Key and Project ID (if they don't already exist) and saves them in <em>benchmarking/models/platforms/EI/configs/EI_converter_user_config.yaml</em>.</p>
+<p>Now, you are ready to use the <em>Convert to Edge Impulse</em> module.</p>
+<h3 id="ekkono-sdk">Ekkono SDK</h3>
+<p><small><span style="color:rgb(156, 39, 176);"> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.41 11.58-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 .59 1.42l9 9A2 2 0 0 0 13 22a2 2 0 0 0 1.41-.59l7-7A2 2 0 0 0 22 13a2 2 0 0 0-.59-1.42M13 20l-9-9V4h7l9 9M6.5 5A1.5 1.5 0 1 1 5 6.5 1.5 1.5 0 0 1 6.5 5"/></svg></span> </span> Ekkono SDK v23.10 was used in our tests.</small></p>
+<p class="annotate">As Ekkono is not a free tool, you will need a valid license to use it. You can learn more about Ekkono on their <a href="https://www.ekkono.ai">website</a>. After obtaining the license, you can either install it using <em>pip</em> or provide its path (1) to the <em>main</em> script.</p>
+<ol>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> For example, if you place the files in <em>benchmarking/models/platforms/Ekkono</em>, the path to the Python wheel would be <em>benchmarking/models/platforms/Ekkono/ekkono-sdk/primer/python/{distribution}/{python-version}/ekkono.primer-{name-suffix}.whl</em>.</li>
+</ol>
+<p class="annotate">Further, you need to download Ekkono's C inference code and place it in the corresponding unzipped project directory for your specific hardware platform. (1)</p>
+<ol>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> For NUCLEO-L4R5ZI, it will be <em>benchmarking/Hardware/STM32/NUCLEO-L4R5ZI_Ekkono/Core/Inc/Ekkono_lib</em> and for RenesasRX65N, it will be <em>benchmarking/Hardware/Renesas/RenesasRX_Ekkono/src/Ekkono_lib</em>.</li>
+</ol>
+<p>At this point, you should be able to both generate Ekkono models using the <em>Generate Ekkono models</em> module and proceed with <em>Test on NUCLEO-L4R5ZI/RenesasRX65N</em>.</p>
+<h3 id="stm32cubeide">STM32CubeIDE</h3>
+<p><small><span style="color:rgb(156, 39, 176);"> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.41 11.58-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 .59 1.42l9 9A2 2 0 0 0 13 22a2 2 0 0 0 1.41-.59l7-7A2 2 0 0 0 22 13a2 2 0 0 0-.59-1.42M13 20l-9-9V4h7l9 9M6.5 5A1.5 1.5 0 1 1 5 6.5 1.5 1.5 0 0 1 6.5 5"/></svg></span> </span> STM32CubeIDE v1.14.1 was used in our tests.</small></p>
+<p class="annotate">STM32CubeIDE is required to compile the C/C++ projects for the STM32 boards. You can download it from the <a href="https://www.st.com/en/development-tools/stm32cubeide.html">ST website</a>. After installation, you need to provide its executable path (1) and the workspace directory (2) to the <em>main</em> script. When prompted by the script, enter these details, which will be saved in the file <em>benchmarking/models/automate/hardware_types/NUCLEO-L4R5ZI/configs/hardware_user_config.yaml</em>.</p>
+<ol>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The executable path can be found at <em>{installation_dir}/STM32CubeIDE_{version}/STM32CubeIDE/stm32cubeide.exe</em>. For example, <em>C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/stm32cubeide.exe</em>.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> You can locate the workspace directory by opening STM32CubeIDE and navigating to <em>File &gt; Switch Workspace &gt; Other...</em>.</li>
+</ol>
+<p>The next step is to ensure the projects are correctly set up and added to the workspace. The zipped projects can be found in <em>benchmarking/Hardware/STM32</em>. Please unzip them, and then add them to the workspace by opening the STM32CubeIDE and selecting <em>File &gt; Open Projects from File System...</em>. Choose the unzipped project folder and click <em>Finish</em>. The project should now appear in the <em>Project Explorer</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please note that the Ekkono library is excluded from the <em>NUCLEO-L4R5ZI_Ekkono</em> project. You need to add it manually. After obtaining the license, you need to download their C inference code and place it in <em>benchmarking/Hardware/STM32/NUCLEO-L4R5ZI_Ekkono/Core/Inc/Ekkono_lib</em></p>
+</div>
+<p>Now, the automation script should be able to compile the projects. To upload the compiled programs to the board, the automation script requires the STM32CubeProgrammer CLI, which we'll cover in the next step.</p>
+<h3 id="stm32cubeclt">STM32CubeCLT</h3>
+<p><small><span style="color:rgb(156, 39, 176);"> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.41 11.58-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 .59 1.42l9 9A2 2 0 0 0 13 22a2 2 0 0 0 1.41-.59l7-7A2 2 0 0 0 22 13a2 2 0 0 0-.59-1.42M13 20l-9-9V4h7l9 9M6.5 5A1.5 1.5 0 1 1 5 6.5 1.5 1.5 0 0 1 6.5 5"/></svg></span> </span> STM32CubeProgrammer v2.16.0 was used in our tests.</small></p>
+<p class="annotate">STM32Programmer CLI as a part of STM32CubeCLT allows the automation script to upload the compiled programs to the STM32 boards. You can download it from the <a href="https://www.st.com/en/development-tools/stm32cubeclt.html">ST website</a>. After installation, provide its executable path (1) to the <em>main</em> script when prompted. The path will be saved in <em>benchmarking/models/automate/hardware_types/NUCLEO-L4R5ZI/configs/hardware_user_config.yaml</em>.</p>
+<ol>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The executable will be in <em>{installation_dir}/STM32CubeCLT_{version}/STM32CubeProgrammer/bin/STM32_programmer_CLI.exe</em>. For example, <em>C:/ST/STM32CubeCLT_1.15.1/STM32CubeProgrammer/bin/STM32_programmer_CLI.exe</em>.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>When connecting your NUCLUEO-L4R5ZI board to your PC, you need to have the ST-Link driver installed. It's recommended to upload a project to your board for the first time using STM32CubeIDE to verify that the driver is correctly installed and everything is functioning as expected.</p>
+</div>
+<p>At this point, you should be ready to use the <em>Test on NUCLEO-L4R5ZI</em> module.</p>
+<h3 id="renesas-e2-studio">Renesas e2 studio</h3>
+<p><small><span style="color:rgb(156, 39, 176);"> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.41 11.58-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 .59 1.42l9 9A2 2 0 0 0 13 22a2 2 0 0 0 1.41-.59l7-7A2 2 0 0 0 22 13a2 2 0 0 0-.59-1.42M13 20l-9-9V4h7l9 9M6.5 5A1.5 1.5 0 1 1 5 6.5 1.5 1.5 0 0 1 6.5 5"/></svg></span> </span> Renesas e2 studio v24.1.1 was used in our tests.</small></p>
+<p class="annotate">Renesas e2 studio is required to compile the C/C++ projects for the Renesas boards. You can download it from the <a href="https://www.renesas.com/us/en/software-tool/e-studio">Renesas website</a>. After installation, you need to provide its executable path (1) and the workspace directory (2) to the <em>main</em> script. When prompted by the script, enter these details, which will be saved in the file <em>benchmarking/models/automate/hardware_types/RenesasRX65N/configs/hardware_user_config.yaml</em>.</p>
+<ol>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The executable will be <em>{installation_dir}/Renesas/e2_studio/eclipse/e2studioc.exe</em>. For example, <em>C:/Renesas/e2_studio/eclipse/e2studioc.exe</em>.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> You can locate the workspace directory by opening e2 studio and navigating to <em>File &gt; Switch Workspace &gt; Other...</em>.</li>
+</ol>
+<p>The next step is to ensure the projects are correctly set up and added to the workspace. The zipped projects can be found in <em>benchmarking/Hardware/Renesas</em>. Please unzip them, and then add them to the workspace by opening e2 studio and selecting <em>File &gt; Open Projects from File System...</em>. Choose the unzipped project folder and click <em>Finish</em>. The project should now appear in the <em>Project Explorer</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please note that the Ekkono library is excluded from the <em>RenesasRX_Ekkono</em> project. You need to add it manually. After obtaining the license, you need to download their C inference code and place it in <em>benchmarking/Hardware/Renesas/RenesasRX_Ekkono/src/Ekkono_lib</em></p>
+</div>
+<p>Now, the automation script should be able to compile the projects. To upload the compiled programs to the board, the automation script requires the Renesas Flash Programmer, which we'll cover in the next step.</p>
+<h3 id="renesas-flash-programmer">Renesas Flash Programmer</h3>
+<p><small><span style="color:rgb(156, 39, 176);"> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.41 11.58-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 .59 1.42l9 9A2 2 0 0 0 13 22a2 2 0 0 0 1.41-.59l7-7A2 2 0 0 0 22 13a2 2 0 0 0-.59-1.42M13 20l-9-9V4h7l9 9M6.5 5A1.5 1.5 0 1 1 5 6.5 1.5 1.5 0 0 1 6.5 5"/></svg></span> </span> Renesas Flash Programmer v3.15.00 was used in our tests.</small></p>
+<p>Renesas Flash Programmer allows the automation script to upload the compiled programs to the Renesas boards. You can download it from the <a href="https://www.renesas.com/us/en/software-tool/renesas-flash-programmer-programming-gui#downloads">Renesas website</a>. After installation, open it and create a new project by clicking <em>File &gt; New Project...</em>. In the project creation window, configure it as follows:</p>
+<ul>
+<li><em>Microcontroller</em>: RX65x</li>
+<li><em>Project Name</em>: [Your preferred name]</li>
+<li><em>Project Folder</em>: [Your preferred folder]</li>
+<li><em>Tool</em>: E2 emulator Lite</li>
+<li><em>Interface</em>: FINE</li>
+</ul>
+<p>Additionally, click <em>Tool Details</em>, go to <em>Reset Settings</em>, and configure <em>Reset signal at Disconnection</em> to <em>Reset Pin as Hi-Z</em>. After these steps, click <em>Connect</em>.</p>
+<p class="annotate">In the next step you need to provide the RFP's executable path (1) and its project path (2) to the <em>main</em> script. Run the script and provide them when asked. The script will save them in <em>benchmarking/models/automate/hardware_types/RenesasRX65N/configs/hardware_user_config.yaml</em>.</p>
+<ol>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The executable will be <em>{installation_dir}/Renesas Electronics/Programming Tools/Renesas Flash Programmer V{version}/RFPV{version}.exe</em>. For example, <em>C:/Program Files (x86)/Renesas Electronics/Programming Tools/Renesas Flash Programmer V3.15/RFPV3.exe</em></li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The project file is a <em>.rpj</em> file, located in the folder you selected earlier.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>We recommend uploading a project to your board manually via Renesas e2 studio the first time to ensure everything is set up correctly.</p>
+</div>
+<p>Unlike the NUCLEO-L4R5ZI board, the Renesas RX65N target board does not connect to the PC via its programmer for serial communication. To establish a serial connection, you’ll need to connect the board to the PC using a USB-to-TTL cable. Connect the USB side to the PC, and on the TTL side, connect the <em>GND</em> to the <em>GND</em> pin on the board (pin 61), and the <em>RX</em> to the <em>TX</em> pin on the board (pin 45). Be sure to install the necessary driver on your PC before proceeding.</p>
+<p>Now, you're ready to use the <em>Test on RenesasRX65N</em> module.</p>
+<h2 id="modules">Modules</h2>
+<p>As mentioned in the <a href="../">Home page</a>, the project consists of multiple modules. The modules can be run one after another to reach the final goal. The <em>benchmarking.main</em> script provides an intuitive interface for managing the execution of these modules. Below, we describe each module, their requirements, relationships, and key configurations that might be of your interest to change.</p>
+<p><a class="glightbox" href="figures/modules.png#only-light" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Modules" src="figures/modules.png#only-light" /></a>
+<a class="glightbox" href="figures/modules - dark.png#only-dark" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Modules" src="figures/modules - dark.png#only-dark" /></a></p>
+<h3 id="generate-tf-models">Generate TF models</h3>
+<p>You should describe the desired models in <em>Model Description Files</em>. The <em>Model Generator</em> produces TensorFlow models based on these files.</p>
+<p>The <em>Model Description Files</em> are YAML files located in <em>target_models</em> directory. The name of the model will be the path to the file without the extension. If the name of the file or any directory leading to that file begins with a dot (.), the file will be ignored. Please refer to the <a href="../model_description_files/">Model Description Files</a> page for more detailed instructions on creating these files.</p>
+<p>Configurations for this module are located in <em>benchmarking/models/platforms/TensorFlow/configs/model_generator_config.yaml</em>. Below are the primary configurations you may want to modify:</p>
+<ul>
+<li><em>wandb_online</em>: Enables cloud-based logging through W&amp;B (Weights &amp; Biases). Otherwise, logs are saved locally.</li>
+<li><em>wandb_project_name</em>: Specifies the W&amp;B project name.</li>
+<li><em>train_models</em>: If enabled, the generated models will undergo training.</li>
+<li><em>evaluate_models</em>: If enabled, the models will be evaluated after training.</li>
+<li><em>measure_execution_time</em>: If enabled, the execution time of the models on your machine will be measured.</li>
+<li><em>n_representative_data</em>: Number of representative data that will be used in some conversions of the <em>Convert to TFLite</em> module.</li>
+<li><em>n_eqcheck_data</em>: Number of data samples that will be used to check the equivalence of the original and on-board models.</li>
+<li><em>epochs</em>: If defined, overrides the number of epochs specified in the <em>Model Description Files</em>. This is useful for demonstration or debugging purposes.</li>
+</ul>
+<h3 id="generate-ekkono-models">Generate Ekkono models</h3>
+<div class="admonition warning">
+<p class="admonition-title">License Required</p>
+<p>Ekkono is a commercial product and requires a valid license. You can find more information on their <a href="https://www.ekkono.ai/">website</a>.</p>
+</div>
+<p>Same as <em>Generate TF models</em>, this module takes in the <em>Model Description Files</em>. These files can be the same ones used for generating TensorFlow models; however, please note the limitations of Ekkono. For example, Ekkono does not support CNNs, so any file containing CNN layers will result in an error.</p>
+<p>Since Ekkono operates in its own environment, we have streamlined the generation and conversion steps into a single module. The output of this module consists of Ekkono's Crystal models along with the necessary C files for benchmarking.</p>
+<p>The configuration is similar to the TensorFlow module and can be found in <em>benchmarking/models/platforms/Ekkono/configs/model_generator_config.yaml</em>. Key configurations include:</p>
+<ul>
+<li><em>wandb_online</em>: Enables cloud-based logging through W&amp;B (Weights &amp; Biases). Otherwise, logs are saved locally.</li>
+<li><em>wandb_project_name</em>: Specifies the W&amp;B project name.</li>
+<li><em>train_models</em>: If enabled, the generated models will undergo training.</li>
+<li><em>evaluate_models</em>: If enabled, the models will be evaluated after training.</li>
+<li><em>measure_execution_time</em>: If enabled, the execution time of the models on your machine will be measured.</li>
+<li><em>n_eqcheck_data</em>: Number of data samples that will be used to check the equivalence of the original and on-board models.</li>
+<li><em>epochs</em>: If defined, overrides the number of epochs specified in the <em>Model Description Files</em>. This is useful for demonstration or debugging purposes.</li>
+</ul>
+<h3 id="convert-to-tflite">Convert to TFLite</h3>
+<p>Once TensorFlow models are generated, you can use the <em>Convert to TFLite</em> module to convert the models into TFLite format. Various optimizations can be applied to the models during this conversion.</p>
+<p>The configuration file is located at <em>benchmarking/models/platforms/TFLite/configs/TFLite_converter_config.yaml</em>. Key configurations include:</p>
+<ul>
+<li><em>conversion_timeout</em>: The maximum time in seconds that the conversion process can take.</li>
+<li><em>optimizations</em>: List of optimizations that should be applied to each model.</li>
+</ul>
+<p>The available optimizations are:</p>
+<ul>
+<li><em>basic</em>: No optimization, just the standard conversion.</li>
+<li><em>q_dynamic</em>: Dynamic range quantization. Weights are quantized to 8-bit integers, while activations are stored in 32-bit floats. Activations can be dynamically quantized to 8-bit integers to accelerate inference and then dequantized back to 32-bit floats for storage. Learn more <a href="https://ai.google.dev/edge/litert/models/post_training_quant">here</a>.</li>
+<li><em>q_full_int</em>: Full integer quantization. Both weights and activations are quantized to 8-bit integers. However, the input and output remain in 32-bit floats. Learn more <a href="https://ai.google.dev/edge/litert/models/post_training_integer_quant">here</a>.</li>
+<li><em>q_full_int_only</em>: Similar to <em>q_full_int</em>, but in this case, everything is quantized to integers without fallback to floats. Learn more <a href="https://ai.google.dev/edge/litert/models/post_training_integer_quant">here</a>.</li>
+<li><em>q_16x8</em>: 16x8 quantization. To improve the accuracy of the quantized model, the activations are quantized to 16-bit integers while the weights are quantized to 8-bit integers. Similar to <em>q_full_int</em>, the input and output are left in 32-bit floats. Learn more <a href="https://ai.google.dev/edge/litert/models/post_training_integer_quant_16x8">here</a>.</li>
+<li><em>q_16x8_int_only</em>: Same as <em>q_16x8</em>, but everything is quantized to integers without fallback to floats. Learn more <a href="https://ai.google.dev/edge/litert/models/post_training_integer_quant_16x8">here</a>.</li>
+<li><em>q_float16</em>: Float16 quantization. Weights are quantized to 16-bit floats, reducing model size with minimal impact on accuracy. Learn more <a href="https://ai.google.dev/edge/litert/models/post_training_float16_quant">here</a>.</li>
+<li><em>p_{percentage}</em>: Post-training weight pruning. For example, "p_75" means 75% of the weights will be pruned. Learn more <a href="https://www.tensorflow.org/model_optimization/guide/pruning">here</a>.</li>
+<li><em>c_{clusters}</em>: Weight clustering. For example, "c_16" clusters the weights into 16 groups. Learn more <a href="https://www.tensorflow.org/model_optimization/guide/clustering">here</a>.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can combine multiple optimizations using a plus (+) sign. For example, "p_25 + c_16 + q_full_int_only" will prune 25% of the weights, cluster the weights into 16 groups, and fully quantize everything into integers. Note: Quantization schemes should always be applied as a final step.</p>
+</div>
+<p>Once converted, the model is ready for further conversion to TFLM, Edge Impulse, or eAI Translator formats.</p>
+<h3 id="convert-to-tflm">Convert to TFLM</h3>
+<p>This module requires the TFLite models generated by the <em>Convert to TFLite</em> module and their corresponding <em>TFLM_info</em> files from <em>Generate TF models</em>. The latter contains information like an estimation of the required <em>arena_size</em> and the necessary operator resolver functions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>TFLM does not support <em>q_float16</em> quantization. Models with this optimization will be ignored.</p>
+</div>
+<p>The output of this module is a set of C++ files for each model, which can be used for benchmarking or integrated into any other C++ project.</p>
+<h3 id="convert-to-edge-impulse">Convert to Edge Impulse</h3>
+<p>This module converts TFLite models into the Edge Impulse format by uploading the models to the Edge Impulse cloud and downloading the required files. The user must have an Edge Impulse account and provide their <em>API Key</em> and <em>Project ID</em>. These should be placed in the file located at <em>benchmarking/models/platforms/EI/configs/EI_converter_user_config.yaml</em> under the keys <em>ei_api_key</em> and <em>ei_project_id</em>, respectively.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Edge Impulse only supports the <em>basic</em> and <em>q_full_int_only</em> optimizations. Other types of optimizations will be ignored.</p>
+</div>
+<h3 id="convert-to-eai-translator">Convert to eAI Translator</h3>
+<p>This module in fact does not convert the models to eAI Translator format, but it generates the necessary C data files required for benchmarking. Since Renesas eAI Translator does not provide an automated method for converting models, users must manually perform the conversion. In the stage of testing the models on the board, the script will check if the eAI Translator models are available and if not, it will inform the user where they can find the TFLite models and where the eAI Translator models should be placed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Renesas eAI Translator only supports the <em>basic</em> and <em>q_full_int_only</em> optimizations. Other types of optimizations will be ignored.</p>
+</div>
+<h3 id="test-on-nucleo-l4r5zirenesasrx65n">Test on NUCLEO-L4R5ZI/RenesasRX65N</h3>
+<p>This module uses the generated C/C++ files from <em>Generate Ekkono models</em>, <em>Convert to TFLM</em>, <em>Convert to Edge Impulse</em>, or <em>Convert to eAI Translator</em> and integrates them into a benchmarking project for either the NUCLEO-L4R5ZI or RenesasRX65N board. Once integrated, the module compiles the program, uploads it to the board, and captures the benchmarking output.</p>
+<p>An overview of the results are saved in an Excel file, while detailed results can be found in each model's directory. Further, comparison plots will be generated to visualize the performance of different model types.</p>
+<p>The results are: <em>Execution Time</em>, <em>Flash and RAM Usage</em>, and <em>Error</em>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>All details, generated files, results and error messages related to each model can be found in the model's directory under <em>saved_models/{TensorFlow/Ekkono}/{model_type}/{time_tag}</em></p>
+</div>
+<p>The configuration options for this module can be found in <em>benchmarking/models/automate/configs/automate_config.yaml</em> which includes:</p>
+<ul>
+<li><em>arena_finder</em>: If enabled, the script will attempt to find the optimal arena size for each TFLM model.</li>
+<li><em>benchmark_overall_timeout</em>: Specifies the maximum duration in seconds for the entire benchmarking process.</li>
+<li><em>benchmark_silence_timeout</em>: Specifies the maximum duration in seconds that the board is allowed to remain silent without any output.</li>
+</ul>
+<h3 id="bonus-result-plotter">(Bonus) Result plotter</h3>
+<p>The <em>Result plotter</em> script in <em>benchmarking/models/utils/result_plotter.py</em> will help you generate figures comparing the results of your benchmark. Please see its API for more information.</p>
+<div class="admonition success">
+<p class="admonition-title">You are ready to go!</p>
+<p>You now have all the information you need to use the Benchmarking tool. We hope you find it useful 😊</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../results/" class="md-footer__link md-footer__link--next" aria-label="Next: Results">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Results
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.indexes", "navigation.footer", "content.code.copy", "content.code.annotate", "content.tooltips", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

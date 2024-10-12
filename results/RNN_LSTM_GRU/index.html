@@ -1,0 +1,1483 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Amin">
+      
+      
+      
+        <link rel="prev" href="../TFLM_vs_eAI_Translator/">
+      
+      
+        <link rel="next" href="../Compiler_optimization_levels/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
+    
+    
+      
+        <title>RNN, LSTM, GRU - Benchmarking</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/style.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rnn-lstm-gru" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Benchmarking" class="md-header__button md-logo" aria-label="Benchmarking" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Benchmarking
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              RNN, LSTM, GRU
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Benchmarking" class="md-nav__button md-logo" aria-label="Benchmarking" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Benchmarking
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how_to_use/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How To Use
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Results
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Results
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TFLM_quantizations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TFLM Quantizations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TFLM_pruning_and_clustering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TFLM Pruning and Clustering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TFLM_vs_Edge_Impulse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TFLM vs Edge Impulse
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TFLM_vs_Ekkono/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TFLM vs Ekkono
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TFLM_vs_eAI_Translator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TFLM vs eAI Translator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    RNN, LSTM, GRU
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    RNN, LSTM, GRU
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution Time
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flash-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flash Size
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ram-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAM Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Compiler_optimization_levels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compiler Optimization Levels
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Importance_of_FPU/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Importance of FPU
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../STM_vs_Renesas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    STM vs Renesas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GCC_vs_CCRX/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GCC vs CCRX
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API Reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/main/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Main
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Platforms
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Platforms
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/platforms/tensorflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TensorFlow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/platforms/tflite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TFLite
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/platforms/tflm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TFLM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/platforms/EI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Edge Impulse
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/platforms/ekkono/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ekkono
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/platforms/eAI_Translator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    eAI Translator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/datasets/data_template/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/automate/automate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Utilities
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Utilities
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/utils/utils/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Utils
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/utils/result_plotter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Result Plotter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution Time
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flash-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flash Size
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ram-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAM Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="rnn-lstm-gru">RNN, LSTM, GRU</h1>
+<p>This study highlights the resource requirements of Simple RNN, LSTM, and GRU models.</p>
+<p class="annotate">Only TFLM could be used for these models (1). Also, all the models were deployed on the NUCLEO-L4R5ZI board.</p>
+<ol>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> Edge Impulse requires an enterprise account, Renesas eAI Translator cannot convert RNNs (might be solved by further adjustments), and Ekkono does not support RNNs.</li>
+</ol>
+<p><em>Simple 0</em> is excluded from the figures due to its negligible resource requirements compared to the other models and keeping the figures readable. <em>Simple 2</em> is also excluded from the figures because its <em>basic</em> version failed to run. All models' information is available in the tables below.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Variant</th>
+<th>Parameters</th>
+<th>MACs</th>
+<th>Error</th>
+<th>Exe (ms)</th>
+<th>Flash (kB)</th>
+<th>RAM (kB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simple 0</td>
+<td>basic</td>
+<td>5</td>
+<td>9</td>
+<td>0</td>
+<td>0.107</td>
+<td>110.4375</td>
+<td>8.140625</td>
+</tr>
+<tr>
+<td>Simple 0</td>
+<td>int8 only</td>
+<td>5</td>
+<td>9</td>
+<td>0.005785</td>
+<td>0.14567</td>
+<td>111.640625</td>
+<td>7.1328125</td>
+</tr>
+<tr>
+<td>Simple 1</td>
+<td>basic</td>
+<td>8288</td>
+<td>827200</td>
+<td>0</td>
+<td>107.2074</td>
+<td>218.65625</td>
+<td>112.6328125</td>
+</tr>
+<tr>
+<td>Simple 1</td>
+<td>int8 only</td>
+<td>8288</td>
+<td>827200</td>
+<td>0.004366</td>
+<td>292.9049</td>
+<td>590.8125</td>
+<td>103.2578125</td>
+</tr>
+<tr>
+<td>Simple 2</td>
+<td>basic</td>
+<td>32960</td>
+<td>3292800</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Simple 2</td>
+<td>int8 only</td>
+<td>32960</td>
+<td>3292800</td>
+<td>0.004072</td>
+<td>292.9049</td>
+<td>615.1875</td>
+<td>106.3828125</td>
+</tr>
+<tr>
+<td>Shakespeare 1</td>
+<td>basic</td>
+<td>12513</td>
+<td>1056300</td>
+<td>0</td>
+<td>141.1776</td>
+<td>251.578125</td>
+<td>127.625</td>
+</tr>
+<tr>
+<td>Shakespeare 1</td>
+<td>int8 only</td>
+<td>12513</td>
+<td>1056300</td>
+<td>0.020862</td>
+<td>168.4068</td>
+<td>620.84375</td>
+<td>107.5859375</td>
+</tr>
+<tr>
+<td>Shakespeare 2</td>
+<td>basic</td>
+<td>37249</td>
+<td>3321900</td>
+<td>0</td>
+<td>377.1719</td>
+<td>348.203125</td>
+<td>175.625</td>
+</tr>
+<tr>
+<td>Shakespeare 2</td>
+<td>int8 only</td>
+<td>37249</td>
+<td>3321900</td>
+<td>0.021797</td>
+<td>323.4767</td>
+<td>645.1953125</td>
+<td>107.5859375</td>
+</tr>
+<tr>
+<td>LSTM</td>
+<td>basic</td>
+<td>26912</td>
+<td>2702400</td>
+<td>0</td>
+<td>362.2378</td>
+<td>472.9609375</td>
+<td>268.734375</td>
+</tr>
+<tr>
+<td>LSTM</td>
+<td>int8 only</td>
+<td>26912</td>
+<td>2702400</td>
+<td>0.013989</td>
+<td>565.3515</td>
+<td>769.8203125</td>
+<td>258.359375</td>
+</tr>
+<tr>
+<td>GRU</td>
+<td>basic</td>
+<td>20896</td>
+<td>2094400</td>
+<td>0</td>
+<td>276.7367</td>
+<td>496.984375</td>
+<td>298.734375</td>
+</tr>
+<tr>
+<td>GRU</td>
+<td>int8 only</td>
+<td>20896</td>
+<td>2094400</td>
+<td>0.044773</td>
+<td>374.4158</td>
+<td>809.7890625</td>
+<td>295.359375</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> <em>Simple_1</em> is named <em>Simple</em> in figures.</p>
+<p><br/></p>
+<h2 id="models">Models</h2>
+<figure>
+    <a class="glightbox" href="../../figures/results/TFLM - RNN - STM/params_MACs.png#only-light" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../figures/results/TFLM - RNN - STM/params_MACs.png#only-light" alt="RNN parameters and MACs"></a>
+    <a class="glightbox" href="../../figures/results/TFLM - RNN - STM/dark/params_MACs.png#only-dark" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../figures/results/TFLM - RNN - STM/dark/params_MACs.png#only-dark" alt="RNN parameters and MACs"></a>
+    <figcaption>RNN parameters and MACs</figcaption>
+</figure>
+<h2 id="error">Error</h2>
+<figure>
+    <a class="glightbox" href="../../figures/results/TFLM - RNN - STM/error.png#only-light" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../figures/results/TFLM - RNN - STM/error.png#only-light" alt="RNN error"></a>
+    <a class="glightbox" href="../../figures/results/TFLM - RNN - STM/dark/error.png#only-dark" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../figures/results/TFLM - RNN - STM/dark/error.png#only-dark" alt="RNN error"></a>
+    <figcaption>RNN error</figcaption>
+</figure>
+<h2 id="execution-time">Execution Time</h2>
+<figure>
+    <a class="glightbox" href="../../figures/results/TFLM - RNN - STM/exe.png#only-light" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../figures/results/TFLM - RNN - STM/exe.png#only-light" alt="RNN execution time"></a>
+    <a class="glightbox" href="../../figures/results/TFLM - RNN - STM/dark/exe.png#only-dark" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../figures/results/TFLM - RNN - STM/dark/exe.png#only-dark" alt="RNN execution time"></a>
+    <figcaption>RNN execution time</figcaption>
+</figure>
+<h2 id="flash-size">Flash Size</h2>
+<figure>
+    <a class="glightbox" href="../../figures/results/TFLM - RNN - STM/flash.png#only-light" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../figures/results/TFLM - RNN - STM/flash.png#only-light" alt="RNN flash size"></a>
+    <a class="glightbox" href="../../figures/results/TFLM - RNN - STM/dark/flash.png#only-dark" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../figures/results/TFLM - RNN - STM/dark/flash.png#only-dark" alt="RNN flash size"></a>
+    <figcaption>RNN flash size</figcaption>
+</figure>
+<h2 id="ram-usage">RAM Usage</h2>
+<figure>
+    <a class="glightbox" href="../../figures/results/TFLM - RNN - STM/ram.png#only-light" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../figures/results/TFLM - RNN - STM/ram.png#only-light" alt="RNN RAM usage"></a>
+    <a class="glightbox" href="../../figures/results/TFLM - RNN - STM/dark/ram.png#only-dark" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../../figures/results/TFLM - RNN - STM/dark/ram.png#only-dark" alt="RNN RAM usage"></a>
+    <figcaption>RNN RAM usage</figcaption>
+</figure>
+<h2 id="summary">Summary</h2>
+<ul>
+<li>
+<p><strong>Model Correctness</strong>: Except the <em>basic</em> version of <em>Simple 2</em> which runs out of memory, all models got relatively acceptable error rates. The most concerning case belongs to <em>GRU</em> which might require some attention.</p>
+</li>
+<li>
+<p><strong>Execution Time</strong>: It is surprising that except for <em>Shakespeare 2</em>, the <em>int8 only</em> versions of the models have higher execution times.</p>
+</li>
+<li>
+<p><strong>Flash Size</strong>: It is surprising that the <em>int8 only</em> versions of the models have larger flash sizes.</p>
+</li>
+<li>
+<p class="annotate"><strong>RAM Usage</strong>: <em>int8 only</em> requires less RAM. (1)</p>
+<ol>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> We expected the <em>int8 only</em> to have the advantage with a bigger margin.</li>
+</ol>
+</li>
+<li>
+<p><strong>Conclusion</strong>: In most cases, the <em>basic</em> version of the models is more efficient.</p>
+</li>
+</ul>
+<details class="info">
+<summary>LSTM vs GRU</summary>
+<p>It's believed that LSTM is more powerful than GRU, but GRU is more parameter and computation efficient. Also, in our study, we see that LSTM has more parameters and MACs than GRU. However, it is interesting that using TFLM, GRU has a larger flash size and RAM usage than LSTM. Still, it's executed faster than LSTM.</p>
+</details>
+<style>
+    figure img {
+        width: 65%;
+        margin: auto;
+        display: block;
+    }
+
+    figcaption {
+        text-align: center;
+        font-size: 14px;
+        color: rgb(117, 117, 117);
+        margin-top: 5px;
+    }
+
+    figcaption:hover {
+        color: rgb(186, 104, 200);
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../TFLM_vs_eAI_Translator/" class="md-footer__link md-footer__link--prev" aria-label="Previous: TFLM vs eAI Translator">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                TFLM vs eAI Translator
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../Compiler_optimization_levels/" class="md-footer__link md-footer__link--next" aria-label="Next: Compiler Optimization Levels">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Compiler Optimization Levels
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.indexes", "navigation.footer", "content.code.copy", "content.code.annotate", "content.tooltips", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
