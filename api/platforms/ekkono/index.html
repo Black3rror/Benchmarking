@@ -287,8 +287,6 @@
     
       
         
-          
-        
       
         
       
@@ -320,24 +318,16 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../results/" class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     Results
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
@@ -347,6 +337,25 @@
           <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../results/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -355,7 +364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../results/TFLM_quantizations/" class="md-nav__link">
+      <a href="../../../results/TFLM_quantizations.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -376,7 +385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../results/TFLM_pruning_and_clustering/" class="md-nav__link">
+      <a href="../../../results/TFLM_pruning_and_clustering.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -397,7 +406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../results/TFLM_vs_Edge_Impulse/" class="md-nav__link">
+      <a href="../../../results/TFLM_vs_Edge_Impulse.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -418,7 +427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../results/TFLM_vs_Ekkono/" class="md-nav__link">
+      <a href="../../../results/TFLM_vs_Ekkono.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -439,7 +448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../results/TFLM_vs_eAI_Translator/" class="md-nav__link">
+      <a href="../../../results/TFLM_vs_eAI_Translator.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -460,7 +469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../results/RNN_LSTM_GRU/" class="md-nav__link">
+      <a href="../../../results/RNN_LSTM_GRU.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -481,7 +490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../results/Compiler_optimization_levels/" class="md-nav__link">
+      <a href="../../../results/Compiler_optimization_levels.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -502,7 +511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../results/Importance_of_FPU/" class="md-nav__link">
+      <a href="../../../results/Importance_of_FPU.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -523,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../results/STM_vs_Renesas/" class="md-nav__link">
+      <a href="../../../results/STM_vs_Renesas.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -544,7 +553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../results/GCC_vs_CCRX/" class="md-nav__link">
+      <a href="../../../results/GCC_vs_CCRX.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1429,6 +1438,11 @@
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -1467,7 +1481,9 @@
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>cfg_path</code></td>
+            <td>
+                <code>cfg_path</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -1490,11 +1506,13 @@ The configuration file that this path points to should contain the following key
               </div>
             </td>
             <td>
-                  <code><span title="benchmarking.models.platforms.Ekkono.model_generator.config_file_path">config_file_path</span></code>
+                  <code>config_file_path</code>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>**kwargs</code></td>
+            <td>
+                <code>**kwargs</code>
+            </td>
             <td>
                   <code>dict</code>
             </td>
@@ -1836,6 +1854,11 @@ The configuration file that this path points to should contain the following key
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -1857,6 +1880,11 @@ The configuration file that this path points to should contain the following key
 
 
     <div class="doc doc-contents ">
+
+
+
+
+
 
 
               <details class="quote">
@@ -2948,7 +2976,9 @@ The following attributes should be set in the <strong>init</strong> function:
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>cfg</code></td>
+            <td>
+                <code>cfg</code>
+            </td>
             <td>
                   <code>dict</code>
             </td>
@@ -3127,7 +3157,9 @@ The following attributes should be set in the <strong>init</strong> function:
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>denses_params</code></td>
+            <td>
+                <code>denses_params</code>
+            </td>
             <td>
                   <code>list</code>
             </td>
@@ -3141,7 +3173,9 @@ The following attributes should be set in the <strong>init</strong> function:
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>activation</code></td>
+            <td>
+                <code>activation</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -3155,7 +3189,9 @@ The following attributes should be set in the <strong>init</strong> function:
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>epochs</code></td>
+            <td>
+                <code>epochs</code>
+            </td>
             <td>
                   <code>int</code>
             </td>
@@ -3169,7 +3205,9 @@ The following attributes should be set in the <strong>init</strong> function:
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>batch_size</code></td>
+            <td>
+                <code>batch_size</code>
+            </td>
             <td>
                   <code>int</code>
             </td>
@@ -3183,7 +3221,9 @@ The following attributes should be set in the <strong>init</strong> function:
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>learning_rate</code></td>
+            <td>
+                <code>learning_rate</code>
+            </td>
             <td>
                   <code>float</code>
             </td>
@@ -3197,7 +3237,9 @@ The following attributes should be set in the <strong>init</strong> function:
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>trainset</code></td>
+            <td>
+                <code>trainset</code>
+            </td>
             <td>
                   <code>DatasetSupervisorTemplate</code>
             </td>
@@ -3211,7 +3253,9 @@ The following attributes should be set in the <strong>init</strong> function:
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>target_name</code></td>
+            <td>
+                <code>target_name</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -3348,7 +3392,9 @@ The following attributes should be set in the <strong>init</strong> function:
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>denses_params</code></td>
+            <td>
+                <code>denses_params</code>
+            </td>
             <td>
                   <code>list</code>
             </td>
@@ -3362,7 +3408,9 @@ The following attributes should be set in the <strong>init</strong> function:
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>activation</code></td>
+            <td>
+                <code>activation</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -3376,9 +3424,11 @@ The following attributes should be set in the <strong>init</strong> function:
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>pipeline_template</code></td>
             <td>
-                  <code><span title="benchmarking.models.platforms.Ekkono.primer.PipelineTemplate">PipelineTemplate</span></code>
+                <code>pipeline_template</code>
+            </td>
+            <td>
+                  <code>PipelineTemplate</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -3390,7 +3440,9 @@ The following attributes should be set in the <strong>init</strong> function:
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>target_name</code></td>
+            <td>
+                <code>target_name</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -3597,7 +3649,9 @@ placeholders with the appropriate data and saves them to the save_dir.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>save_dir</code></td>
+            <td>
+                <code>save_dir</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -3611,7 +3665,9 @@ placeholders with the appropriate data and saves them to the save_dir.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>eqcheck_data_dir</code></td>
+            <td>
+                <code>eqcheck_data_dir</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -3625,7 +3681,9 @@ placeholders with the appropriate data and saves them to the save_dir.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>templates_dir</code></td>
+            <td>
+                <code>templates_dir</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -3939,7 +3997,9 @@ placeholders with the appropriate data and saves them to the save_dir.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>load_dir</code></td>
+            <td>
+                <code>load_dir</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -4043,7 +4103,9 @@ placeholders with the appropriate data and saves them to the save_dir.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>load_dir</code></td>
+            <td>
+                <code>load_dir</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -4120,7 +4182,9 @@ placeholders with the appropriate data and saves them to the save_dir.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>model_dir</code></td>
+            <td>
+                <code>model_dir</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -4134,7 +4198,9 @@ placeholders with the appropriate data and saves them to the save_dir.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>model_save_name</code></td>
+            <td>
+                <code>model_save_name</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -4321,7 +4387,9 @@ placeholders with the appropriate data and saves them to the save_dir.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>n_samples</code></td>
+            <td>
+                <code>n_samples</code>
+            </td>
             <td>
                   <code>int</code>
             </td>
@@ -4335,7 +4403,9 @@ placeholders with the appropriate data and saves them to the save_dir.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>save_dir</code></td>
+            <td>
+                <code>save_dir</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -4424,7 +4494,9 @@ placeholders with the appropriate data and saves them to the save_dir.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>save_dir</code></td>
+            <td>
+                <code>save_dir</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -4497,7 +4569,9 @@ placeholders with the appropriate data and saves them to the save_dir.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>model_info</code></td>
+            <td>
+                <code>model_info</code>
+            </td>
             <td>
                   <code>dict</code>
             </td>
@@ -4511,7 +4585,9 @@ placeholders with the appropriate data and saves them to the save_dir.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>save_dir</code></td>
+            <td>
+                <code>save_dir</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -4590,7 +4666,9 @@ In case you want to change them, you should call the corresponding functions.</p
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>cfg</code></td>
+            <td>
+                <code>cfg</code>
+            </td>
             <td>
                   <code>dict</code>
             </td>
