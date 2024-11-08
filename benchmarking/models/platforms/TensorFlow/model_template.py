@@ -315,20 +315,6 @@ class ModelSupervisorTemplate:
             yaml.dump(model_info, f, indent=4, sort_keys=False)
 
 
-    @staticmethod
-    def save_models_list(models_list, save_dir):
-        """
-        Saves the list of generated models.
-
-        Args:
-            models_list (list): The list of generated models.
-            save_dir (str): The directory where the models list should be saved.
-        """
-        os.makedirs(save_dir, exist_ok=True)
-        with open(os.path.join(save_dir, "tf_generated_models_list.yaml"), 'w') as f:
-            yaml.dump(models_list, f, indent=4, sort_keys=False)
-
-
     def save_TFLM_info(self, save_path):
         """
         Saves the information required by the TFLM converter as a YAML file.

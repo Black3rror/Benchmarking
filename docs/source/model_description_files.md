@@ -1,6 +1,7 @@
 Each *YAML* file in this directory or its subdirectories represents a target model. In order to exclude a target model from the benchmarking process, simply add *dot (.)* to the beginning of the file name. For example, to exclude the target model *target_model.yaml*, rename it to *.target_model.yaml*. All targets in a directory can be excluded by adding *dot (.)* to the beginning of the directory name.
 
 Each target can be one of the following types:
+
 - *CNN*: A combination of CNN layers followed by a number of fully connected layers. CNN layers can be left empty in order to create a fully connected network.
 - *CNN_MBNet*: The MobileNetV2 network.
 - *RNN*: Recurrent neural network, including simple RNN, LSTM, and GRU.

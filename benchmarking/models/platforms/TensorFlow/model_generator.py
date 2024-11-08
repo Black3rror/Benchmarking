@@ -6,6 +6,7 @@ import os
 import traceback
 
 import wandb
+import yaml
 from omegaconf import OmegaConf
 
 from benchmarking.models.utils.utils import get_abs_path, find_target_files
@@ -16,6 +17,19 @@ logging.getLogger('tensorflow').setLevel(logging.ERROR)
 os.environ["WANDB_SILENT"] = "true"
 config_file_path = "benchmarking/models/platforms/TensorFlow/configs/model_generator_config.yaml"
 config_file_path = get_abs_path(config_file_path)
+
+
+def save_models_list(models_list, save_dir):
+    """
+    Saves the list of generated models.
+
+    Args:
+        models_list (list): The list of generated models.
+        save_dir (str): The directory where the models list should be saved.
+    """
+    os.makedirs(save_dir, exist_ok=True)
+    with open(os.path.join(save_dir, "tf_generated_models_list.yaml"), 'w') as f:
+        yaml.dump(models_list, f, indent=4, sort_keys=False)
 
 
 def main(cfg_path=config_file_path, **kwargs):
@@ -186,7 +200,7 @@ def main(cfg_path=config_file_path, **kwargs):
             print(traceback.format_exc())
 
     print("Saving the generated models list in the directory: {} ...".format(cfg.linkers_dir), end=" ", flush=True)
-    supervisor.save_models_list(models_list, cfg.linkers_dir)
+    save_models_list(models_list, cfg.linkers_dir)
     print("Done\n")
 
     return output
