@@ -1,3 +1,3 @@
-::: benchmarking.models.platforms.Ekkono.model_generator
+::: edgemark.models.platforms.Ekkono.model_generator
 
-::: benchmarking.models.platforms.Ekkono.model
+::: edgemark.models.platforms.Ekkono.model

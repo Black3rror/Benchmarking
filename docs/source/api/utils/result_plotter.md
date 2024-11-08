@@ -1,1 +1,1 @@
-::: benchmarking.models.utils.result_plotter
+::: edgemark.models.utils.result_plotter

@@ -1,1 +1,1 @@
-::: benchmarking.models.datasets.data_template
+::: edgemark.models.datasets.data_template

@@ -1,0 +1,19 @@
+# The script will iteratively populate the following parameter for each item in the 'targets' collection
+time_tag: null
+
+target_models_dir: target_models
+ekkono_base_dir: edgemark/models/platforms/Ekkono
+linkers_dir: linkers
+datasets_dir: edgemark/models/datasets
+
+model_save_dir: saved_models/Ekkono/${time_tag}
+crystal_templates_dir: ${ekkono_base_dir}/crystal_templates
+
+wandb_online: false
+wandb_project_name: "EdgeMark_Ekkono"
+
+train_models: true
+evaluate_models: true
+measure_execution_time: true
+
+n_eqcheck_data: 10    # This number of samples will be saved and later used for equivalence check of model on PC and MCU

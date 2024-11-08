@@ -1,0 +1,5 @@
+project_name: null
+
+projects_dir: edgemark/Hardware/Renesas
+project_dir: ${projects_dir}/${project_name}
+user_config: edgemark/models/automate/hardware_types/RenesasRX65N/configs/hardware_user_config.yaml

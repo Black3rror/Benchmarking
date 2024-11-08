@@ -1,5 +1,0 @@
-project_name: null
-
-projects_dir: benchmarking/Hardware/STM32
-project_dir: ${projects_dir}/${project_name}
-user_config: benchmarking/models/automate/hardware_types/NUCLEO-L4R5ZI/configs/hardware_user_config.yaml

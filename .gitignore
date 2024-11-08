@@ -14,22 +14,22 @@
 /benchmarking_results/*
 !/benchmarking_results/Experiments.xlsx
 
-/benchmarking/models/platforms/EI/configs/EI_converter_user_config.yaml
-/benchmarking/models/automate/hardware_types/NUCLEO-L4R5ZI/configs/hardware_user_config.yaml
-/benchmarking/models/automate/hardware_types/RenesasRX65N/configs/hardware_user_config.yaml
+/edgemark/models/platforms/EI/configs/EI_converter_user_config.yaml
+/edgemark/models/automate/hardware_types/NUCLEO-L4R5ZI/configs/hardware_user_config.yaml
+/edgemark/models/automate/hardware_types/RenesasRX65N/configs/hardware_user_config.yaml
 
-/benchmarking/models/datasets/*/data
-/benchmarking/models/platforms/Ekkono/ekkono-sdk
+/edgemark/models/datasets/*/data
+/edgemark/models/platforms/Ekkono/ekkono-sdk
 
-/benchmarking/Hardware/templates/Ekkono/crystal
+/edgemark/Hardware/templates/Ekkono/crystal
 
-/benchmarking/Hardware/STM32/*/*
-!/benchmarking/Hardware/STM32/*/Core
-/benchmarking/Hardware/STM32/*/Core/*
-!/benchmarking/Hardware/STM32/*/Core/Src
+/edgemark/Hardware/STM32/*/*
+!/edgemark/Hardware/STM32/*/Core
+/edgemark/Hardware/STM32/*/Core/*
+!/edgemark/Hardware/STM32/*/Core/Src
 
-/benchmarking/Hardware/Renesas/*/*
-!/benchmarking/Hardware/Renesas/*/src
+/edgemark/Hardware/Renesas/*/*
+!/edgemark/Hardware/Renesas/*/src
 
 # docs
 docs/site/

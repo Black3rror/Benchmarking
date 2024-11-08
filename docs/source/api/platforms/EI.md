@@ -1,1 +1,1 @@
-::: benchmarking.models.platforms.EI.EI_converter
+::: edgemark.models.platforms.EI.EI_converter

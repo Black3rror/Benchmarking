@@ -1,6 +1,6 @@
-# Benchmarking
+# EdgeMark
 
-The *Benchmarking* project comes with two goals in mind:
+The *EdgeMark* project comes with two goals in mind:
 
 - To provide an automation tool that can help developers, engineers, and researchers to save time and effort in the process of creating an embedded AI (eAI) system.
 - To benchmark several eAI tools and libraries and provide a comparison of their performance and resource usage.

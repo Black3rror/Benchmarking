@@ -1,4 +1,4 @@
-Each *YAML* file in this directory or its subdirectories represents a target model. In order to exclude a target model from the benchmarking process, simply add *dot (.)* to the beginning of the file name. For example, to exclude the target model *target_model.yaml*, rename it to *.target_model.yaml*. All targets in a directory can be excluded by adding *dot (.)* to the beginning of the directory name.
+Each *YAML* file in this directory or its subdirectories represents a target model. In order to exclude a target model from the model generation process, simply add *dot (.)* to the beginning of the file name. For example, to exclude the target model *target_model.yaml*, rename it to *.target_model.yaml*. All targets in a directory can be excluded by adding *dot (.)* to the beginning of the directory name.
 
 Each target can be one of the following types:
 

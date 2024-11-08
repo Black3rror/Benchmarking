@@ -1,0 +1,5 @@
+project_name: null
+
+projects_dir: edgemark/Hardware/STM32
+project_dir: ${projects_dir}/${project_name}
+user_config: edgemark/models/automate/hardware_types/NUCLEO-L4R5ZI/configs/hardware_user_config.yaml

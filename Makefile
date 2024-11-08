@@ -10,7 +10,7 @@
 # GLOBALS                                                                       #
 #################################################################################
 
-PROJECT_NAME = benchmarking
+PROJECT_NAME = edgemark
 PROJECT_ROOT = $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
 
 PYTHON_VERSION = 3.11
@@ -72,7 +72,7 @@ remove_environment:
 # put project specific rules here
 
 main:
-	$(PYTHON_INTERPRETER) -m benchmarking.main
+	$(PYTHON_INTERPRETER) -m edgemark.main
 
 ## Run the whole pipeline for TensorFlow and NUCLEO-L4R5ZI: generate model, convert, benchmark
 tflm_stm32: generate_tf_models convert_to_tflite convert_to_tflm automate_stm32_tflm
@@ -99,55 +99,55 @@ eai_translator_renesas: generate_tf_models convert_to_tflite convert_to_eai_tran
 
 ## Generate TensorFlow models
 generate_tf_models:
-	$(PYTHON_INTERPRETER) -m benchmarking.models.platforms.TensorFlow.model_generator
+	$(PYTHON_INTERPRETER) -m edgemark.models.platforms.TensorFlow.model_generator
 
 ## Generate Ekkono models
 generate_ekkono_models:
-	$(PYTHON_INTERPRETER) -m benchmarking.models.platforms.Ekkono.model_generator
+	$(PYTHON_INTERPRETER) -m edgemark.models.platforms.Ekkono.model_generator
 
 ## Convert TensorFlow models to TFLite
 convert_to_tflite:
-	$(PYTHON_INTERPRETER) -m benchmarking.models.platforms.TFLite.TFLite_converter
+	$(PYTHON_INTERPRETER) -m edgemark.models.platforms.TFLite.TFLite_converter
 
 ## Convert TFLite models to TFLM
 convert_to_tflm:
-	$(PYTHON_INTERPRETER) -m benchmarking.models.platforms.TFLM.TFLM_converter
+	$(PYTHON_INTERPRETER) -m edgemark.models.platforms.TFLM.TFLM_converter
 
 ## Convert TFLite models to Edge Impulse
 convert_to_ei:
-	$(PYTHON_INTERPRETER) -m benchmarking.models.platforms.EI.EI_converter
+	$(PYTHON_INTERPRETER) -m edgemark.models.platforms.EI.EI_converter
 
 ## Convert TFLite models to eAI Translator
 convert_to_eai_translator:
-	$(PYTHON_INTERPRETER) -m benchmarking.models.platforms.eAI_Translator.eAI_Translator_converter
+	$(PYTHON_INTERPRETER) -m edgemark.models.platforms.eAI_Translator.eAI_Translator_converter
 
 ## Test TFLM models on NUCLEO-L4R5ZI
 automate_stm32_tflm:
-	$(PYTHON_INTERPRETER) -m benchmarking.models.automate.automate TFLM NUCLEO-L4R5ZI
+	$(PYTHON_INTERPRETER) -m edgemark.models.automate.automate TFLM NUCLEO-L4R5ZI
 
 ## Test Edge Impulse models on NUCLEO-L4R5ZI
 automate_stm32_ei:
-	$(PYTHON_INTERPRETER) -m benchmarking.models.automate.automate EI NUCLEO-L4R5ZI
+	$(PYTHON_INTERPRETER) -m edgemark.models.automate.automate EI NUCLEO-L4R5ZI
 
 ## Test Ekkono models on NUCLEO-L4R5ZI
 automate_stm32_ekkono:
-	$(PYTHON_INTERPRETER) -m benchmarking.models.automate.automate Ekkono NUCLEO-L4R5ZI
+	$(PYTHON_INTERPRETER) -m edgemark.models.automate.automate Ekkono NUCLEO-L4R5ZI
 
 ## Test TFLM models on RenesasRX65N
 automate_renesas_tflm:
-	$(PYTHON_INTERPRETER) -m benchmarking.models.automate.automate TFLM RenesasRX65N
+	$(PYTHON_INTERPRETER) -m edgemark.models.automate.automate TFLM RenesasRX65N
 
 ## Test Edge Impulse models on RenesasRX65N
 automate_renesas_ei:
-	$(PYTHON_INTERPRETER) -m benchmarking.models.automate.automate EI RenesasRX65N
+	$(PYTHON_INTERPRETER) -m edgemark.models.automate.automate EI RenesasRX65N
 
 ## Test Ekkono models on RenesasRX65N
 automate_renesas_ekkono:
-	$(PYTHON_INTERPRETER) -m benchmarking.models.automate.automate Ekkono RenesasRX65N
+	$(PYTHON_INTERPRETER) -m edgemark.models.automate.automate Ekkono RenesasRX65N
 
 ## Test eAI Translator models on RenesasRX65N
 automate_renesas_eai_translator:
-	$(PYTHON_INTERPRETER) -m benchmarking.models.automate.automate eAI_Translator RenesasRX65N
+	$(PYTHON_INTERPRETER) -m edgemark.models.automate.automate eAI_Translator RenesasRX65N
 
 #################################################################################
 # Self Documenting Commands                                                     #

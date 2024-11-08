@@ -1,6 +1,6 @@
-# Benchmarking
+# EdgeMark
 
-Benchmarking different embedded AI tools against various models and hardware.
+An automation and benchmarking system for embedded AI tools.
 
 ## Project structure
 
@@ -30,15 +30,15 @@ The directory structure of the project looks like this:
 │   │
 │   └── Experiments.xlsx <- Excel file that contains the results of the experiments
 │
-├── benchmarking         <- Source code for use in this project.
+├── edgemark             <- Source code for use in this project.
 │   │
 │   ├── __init__.py      <- Makes folder a Python module
 │   │
 │   ├── models           <- Python modules for generation, conversion, and testing of models
 │   │
-│   ├── Hardware         <- C/C++ projects for benchmarking hardware
+│   ├── Hardware         <- C/C++ projects for testing the hardware
 │   │
-│   └── main.py          <- Main script for running the benchmarking
+│   └── main.py          <- Main script for running the tool
 │
 └── LICENSE              <- Open-source license if one is chosen
 ```

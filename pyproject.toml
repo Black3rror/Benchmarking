@@ -3,9 +3,9 @@ requires = ["setuptools", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "benchmarking"
+name = "edgemark"
 version = "0.0.1"
-description = "Benchmarking different embedded AI tools against various models and hardware."
+description = "An automation and benchmarking system for embedded AI tools."
 authors = [
   { name = "Amin", email = "moam@dtu.dk" },
 ]
@@ -15,7 +15,7 @@ requires-python = ">=3.11"
 dynamic = ["dependencies", "optional-dependencies"]
 
 [tool.setuptools]
-packages = ["benchmarking"]
+packages = ["edgemark"]
 
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}

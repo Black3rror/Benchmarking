@@ -1,5 +1,5 @@
-::: benchmarking.models.automate.automate
+::: edgemark.models.automate.automate
 
-::: benchmarking.models.automate.investigator
+::: edgemark.models.automate.investigator
 
-::: benchmarking.models.automate.hardware_template
+::: edgemark.models.automate.hardware_template

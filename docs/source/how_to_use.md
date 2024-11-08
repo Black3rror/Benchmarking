@@ -1,11 +1,11 @@
 # How To Use
 
-It is easy to use the *Benchmarking* tool. You just need to:
+It is easy to use *EdgeMark*. You just need to:
 
 1. Clone the repository and navigate to the root directory of the project.
     ```bash
-    git clone https://github.com/Black3rror/Benchmarking.git
-    cd Benchmarking
+    git clone https://github.com/Black3rror/EdgeMark.git
+    cd EdgeMark
     ```
 
 2. Run the *main* Python script. (1)
@@ -15,7 +15,7 @@ It is easy to use the *Benchmarking* tool. You just need to:
 
     === "Python"
         ```bash
-        python -m benchmarking.main
+        python -m edgemark.main
         ```
 
     === "Makefile"
@@ -31,7 +31,7 @@ It is easy to use the *Benchmarking* tool. You just need to:
 
 !!! info ""
 
-    On the first run, the script will automatically install the necessary dependencies for itself. On the second run, the user can ask the script to install any additional Python dependencies required for the benchmarking process. Third time is the charm! You should be greeted with the tool's main menu, where you'll be asked to choose your desired action.
+    On the first run, the script will automatically install the necessary dependencies for itself. On the second run, the user can ask the script to install any additional Python dependencies required for the automation process. Third time is the charm! You should be greeted with the tool's main menu, where you'll be asked to choose your desired action.
 
 ## Project Setup
 
@@ -54,7 +54,7 @@ Once your account is set up, locate the API Key and Project ID:
 { .annotate }
     1.  :man_raising_hand: You can also find it by looking at the URL of the page: *https://studio.edgeimpulse.com/studio/^^{project_id}^^*.
 
-After obtaining this information, provide it to the project's *main* script in order to make the connection. The script will ask you for the API Key and Project ID (if they don't already exist) and saves them in *benchmarking/models/platforms/EI/configs/EI_converter_user_config.yaml*.
+After obtaining this information, provide it to the project's *main* script in order to make the connection. The script will ask you for the API Key and Project ID (if they don't already exist) and saves them in *edgemark/models/platforms/EI/configs/EI_converter_user_config.yaml*.
 
 Now, you are ready to use the *Convert to Edge Impulse* module.
 
@@ -65,12 +65,12 @@ Now, you are ready to use the *Convert to Edge Impulse* module.
 As Ekkono is not a free tool, you will need a valid license to use it. You can learn more about Ekkono on their [website](https://www.ekkono.ai). After obtaining the license, you can either install it using *pip* or provide its path (1) to the *main* script.
 { .annotate }
 
-1.  :man_raising_hand: For example, if you place the files in *benchmarking/models/platforms/Ekkono*, the path to the Python wheel would be *benchmarking/models/platforms/Ekkono/ekkono-sdk/primer/python/{distribution}/{python-version}/ekkono.primer-{name-suffix}.whl*.
+1.  :man_raising_hand: For example, if you place the files in *edgemark/models/platforms/Ekkono*, the path to the Python wheel would be *edgemark/models/platforms/Ekkono/ekkono-sdk/primer/python/{distribution}/{python-version}/ekkono.primer-{name-suffix}.whl*.
 
 Further, you need to download Ekkono's C inference code and place it in the corresponding unzipped project directory for your specific hardware platform. (1)
 { .annotate }
 
-1.  :man_raising_hand: For NUCLEO-L4R5ZI, it will be *benchmarking/Hardware/STM32/NUCLEO-L4R5ZI_Ekkono/Core/Inc/Ekkono_lib* and for RenesasRX65N, it will be *benchmarking/Hardware/Renesas/RenesasRX_Ekkono/src/Ekkono_lib*.
+1.  :man_raising_hand: For NUCLEO-L4R5ZI, it will be *edgemark/Hardware/STM32/NUCLEO-L4R5ZI_Ekkono/Core/Inc/Ekkono_lib* and for RenesasRX65N, it will be *edgemark/Hardware/Renesas/RenesasRX_Ekkono/src/Ekkono_lib*.
 
 At this point, you should be able to both generate Ekkono models using the *Generate Ekkono models* module and proceed with *Test on NUCLEO-L4R5ZI/RenesasRX65N*.
 
@@ -78,16 +78,16 @@ At this point, you should be able to both generate Ekkono models using the *Gene
 
 <small><span style="color:rgb(156, 39, 176);"> :material-tag-outline: </span> STM32CubeIDE v1.14.1 was used in our tests.</small>
 
-STM32CubeIDE is required to compile the C/C++ projects for the STM32 boards. You can download it from the [ST website](https://www.st.com/en/development-tools/stm32cubeide.html). After installation, you need to provide its executable path (1) and the workspace directory (2) to the *main* script. When prompted by the script, enter these details, which will be saved in the file *benchmarking/models/automate/hardware_types/NUCLEO-L4R5ZI/configs/hardware_user_config.yaml*.
+STM32CubeIDE is required to compile the C/C++ projects for the STM32 boards. You can download it from the [ST website](https://www.st.com/en/development-tools/stm32cubeide.html). After installation, you need to provide its executable path (1) and the workspace directory (2) to the *main* script. When prompted by the script, enter these details, which will be saved in the file *edgemark/models/automate/hardware_types/NUCLEO-L4R5ZI/configs/hardware_user_config.yaml*.
 { .annotate }
 
 1.  :man_raising_hand: The executable path can be found at *{installation_dir}/STM32CubeIDE_{version}/STM32CubeIDE/stm32cubeide.exe*. For example, *C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/stm32cubeide.exe*.
 2.  :man_raising_hand: You can locate the workspace directory by opening STM32CubeIDE and navigating to *File > Switch Workspace > Other...*.
 
-The next step is to ensure the projects are correctly set up and added to the workspace. The zipped projects can be found in *benchmarking/Hardware/STM32*. Please unzip them, and then add them to the workspace by opening the STM32CubeIDE and selecting *File > Open Projects from File System...*. Choose the unzipped project folder and click *Finish*. The project should now appear in the *Project Explorer*.
+The next step is to ensure the projects are correctly set up and added to the workspace. The zipped projects can be found in *edgemark/Hardware/STM32*. Please unzip them, and then add them to the workspace by opening the STM32CubeIDE and selecting *File > Open Projects from File System...*. Choose the unzipped project folder and click *Finish*. The project should now appear in the *Project Explorer*.
 
 !!! note
-    Please note that the Ekkono library is excluded from the *NUCLEO-L4R5ZI_Ekkono* project. You need to add it manually. After obtaining the license, you need to download their C inference code and place it in *benchmarking/Hardware/STM32/NUCLEO-L4R5ZI_Ekkono/Core/Inc/Ekkono_lib*
+    Please note that the Ekkono library is excluded from the *NUCLEO-L4R5ZI_Ekkono* project. You need to add it manually. After obtaining the license, you need to download their C inference code and place it in *edgemark/Hardware/STM32/NUCLEO-L4R5ZI_Ekkono/Core/Inc/Ekkono_lib*
 
 Now, the automation script should be able to compile the projects. To upload the compiled programs to the board, the automation script requires the STM32CubeProgrammer CLI, which we'll cover in the next step.
 
@@ -95,7 +95,7 @@ Now, the automation script should be able to compile the projects. To upload the
 
 <small><span style="color:rgb(156, 39, 176);"> :material-tag-outline: </span> STM32CubeProgrammer v2.16.0 was used in our tests.</small>
 
-STM32Programmer CLI as a part of STM32CubeCLT allows the automation script to upload the compiled programs to the STM32 boards. You can download it from the [ST website](https://www.st.com/en/development-tools/stm32cubeclt.html). After installation, provide its executable path (1) to the *main* script when prompted. The path will be saved in *benchmarking/models/automate/hardware_types/NUCLEO-L4R5ZI/configs/hardware_user_config.yaml*.
+STM32Programmer CLI as a part of STM32CubeCLT allows the automation script to upload the compiled programs to the STM32 boards. You can download it from the [ST website](https://www.st.com/en/development-tools/stm32cubeclt.html). After installation, provide its executable path (1) to the *main* script when prompted. The path will be saved in *edgemark/models/automate/hardware_types/NUCLEO-L4R5ZI/configs/hardware_user_config.yaml*.
 { .annotate }
 
 1.  :man_raising_hand: The executable will be in *{installation_dir}/STM32CubeCLT_{version}/STM32CubeProgrammer/bin/STM32_programmer_CLI.exe*. For example, *C:/ST/STM32CubeCLT_1.15.1/STM32CubeProgrammer/bin/STM32_programmer_CLI.exe*.
@@ -109,16 +109,16 @@ At this point, you should be ready to use the *Test on NUCLEO-L4R5ZI* module.
 
 <small><span style="color:rgb(156, 39, 176);"> :material-tag-outline: </span> Renesas e2 studio v24.1.1 was used in our tests.</small>
 
-Renesas e2 studio is required to compile the C/C++ projects for the Renesas boards. You can download it from the [Renesas website](https://www.renesas.com/us/en/software-tool/e-studio). After installation, you need to provide its executable path (1) and the workspace directory (2) to the *main* script. When prompted by the script, enter these details, which will be saved in the file *benchmarking/models/automate/hardware_types/RenesasRX65N/configs/hardware_user_config.yaml*.
+Renesas e2 studio is required to compile the C/C++ projects for the Renesas boards. You can download it from the [Renesas website](https://www.renesas.com/us/en/software-tool/e-studio). After installation, you need to provide its executable path (1) and the workspace directory (2) to the *main* script. When prompted by the script, enter these details, which will be saved in the file *edgemark/models/automate/hardware_types/RenesasRX65N/configs/hardware_user_config.yaml*.
 { .annotate }
 
 1.  :man_raising_hand: The executable will be *{installation_dir}/Renesas/e2_studio/eclipse/e2studioc.exe*. For example, *C:/Renesas/e2_studio/eclipse/e2studioc.exe*.
 2.  :man_raising_hand: You can locate the workspace directory by opening e2 studio and navigating to *File > Switch Workspace > Other...*.
 
-The next step is to ensure the projects are correctly set up and added to the workspace. The zipped projects can be found in *benchmarking/Hardware/Renesas*. Please unzip them, and then add them to the workspace by opening e2 studio and selecting *File > Open Projects from File System...*. Choose the unzipped project folder and click *Finish*. The project should now appear in the *Project Explorer*.
+The next step is to ensure the projects are correctly set up and added to the workspace. The zipped projects can be found in *edgemark/Hardware/Renesas*. Please unzip them, and then add them to the workspace by opening e2 studio and selecting *File > Open Projects from File System...*. Choose the unzipped project folder and click *Finish*. The project should now appear in the *Project Explorer*.
 
 !!! note
-    Please note that the Ekkono library is excluded from the *RenesasRX_Ekkono* project. You need to add it manually. After obtaining the license, you need to download their C inference code and place it in *benchmarking/Hardware/Renesas/RenesasRX_Ekkono/src/Ekkono_lib*
+    Please note that the Ekkono library is excluded from the *RenesasRX_Ekkono* project. You need to add it manually. After obtaining the license, you need to download their C inference code and place it in *edgemark/Hardware/Renesas/RenesasRX_Ekkono/src/Ekkono_lib*
 
 Now, the automation script should be able to compile the projects. To upload the compiled programs to the board, the automation script requires the Renesas Flash Programmer, which we'll cover in the next step.
 
@@ -136,7 +136,7 @@ Renesas Flash Programmer allows the automation script to upload the compiled pro
 
 Additionally, click *Tool Details*, go to *Reset Settings*, and configure *Reset signal at Disconnection* to *Reset Pin as Hi-Z*. After these steps, click *Connect*.
 
-In the next step you need to provide the RFP's executable path (1) and its project path (2) to the *main* script. Run the script and provide them when asked. The script will save them in *benchmarking/models/automate/hardware_types/RenesasRX65N/configs/hardware_user_config.yaml*.
+In the next step you need to provide the RFP's executable path (1) and its project path (2) to the *main* script. Run the script and provide them when asked. The script will save them in *edgemark/models/automate/hardware_types/RenesasRX65N/configs/hardware_user_config.yaml*.
 { .annotate }
 
 1.  :man_raising_hand: The executable will be *{installation_dir}/Renesas Electronics/Programming Tools/Renesas Flash Programmer V{version}/RFPV{version}.exe*. For example, *C:/Program Files (x86)/Renesas Electronics/Programming Tools/Renesas Flash Programmer V3.15/RFPV3.exe*
@@ -151,7 +151,7 @@ Now, you're ready to use the *Test on RenesasRX65N* module.
 
 ## Modules
 
-As mentioned in the [Home page](index.md), the project consists of multiple modules. The modules can be run one after another to reach the final goal. The *benchmarking.main* script provides an intuitive interface for managing the execution of these modules. Below, we describe each module, their requirements, relationships, and key configurations that might be of your interest to change.
+As mentioned in the [Home page](index.md), the project consists of multiple modules. The modules can be run one after another to reach the final goal. The *edgemark.main* script provides an intuitive interface for managing the execution of these modules. Below, we describe each module, their requirements, relationships, and key configurations that might be of your interest to change.
 
 ![Modules](figures/modules.png#only-light)
 ![Modules](figures/modules - dark.png#only-dark)
@@ -162,7 +162,7 @@ You should describe the desired models in *Model Description Files*. The *Model 
 
 The *Model Description Files* are YAML files located in *target_models* directory. The name of the model will be the path to the file without the extension. If the name of the file or any directory leading to that file begins with a dot (.), the file will be ignored. Please refer to the [Model Description Files](model_description_files.md) page for more detailed instructions on creating these files.
 
-Configurations for this module are located in *benchmarking/models/platforms/TensorFlow/configs/model_generator_config.yaml*. Below are the primary configurations you may want to modify:
+Configurations for this module are located in *edgemark/models/platforms/TensorFlow/configs/model_generator_config.yaml*. Below are the primary configurations you may want to modify:
 
 - *wandb_online*: Enables cloud-based logging through W&B (Weights & Biases). Otherwise, logs are saved locally.
 - *wandb_project_name*: Specifies the W&B project name.
@@ -183,7 +183,7 @@ Same as *Generate TF models*, this module takes in the *Model Description Files*
 
 Since Ekkono operates in its own environment, we have streamlined the generation and conversion steps into a single module. The output of this module consists of Ekkono's Crystal models along with the necessary C files for benchmarking.
 
-The configuration is similar to the TensorFlow module and can be found in *benchmarking/models/platforms/Ekkono/configs/model_generator_config.yaml*. Key configurations include:
+The configuration is similar to the TensorFlow module and can be found in *edgemark/models/platforms/Ekkono/configs/model_generator_config.yaml*. Key configurations include:
 
 - *wandb_online*: Enables cloud-based logging through W&B (Weights & Biases). Otherwise, logs are saved locally.
 - *wandb_project_name*: Specifies the W&B project name.
@@ -197,7 +197,7 @@ The configuration is similar to the TensorFlow module and can be found in *bench
 
 Once TensorFlow models are generated, you can use the *Convert to TFLite* module to convert the models into TFLite format. Various optimizations can be applied to the models during this conversion.
 
-The configuration file is located at *benchmarking/models/platforms/TFLite/configs/TFLite_converter_config.yaml*. Key configurations include:
+The configuration file is located at *edgemark/models/platforms/TFLite/configs/TFLite_converter_config.yaml*. Key configurations include:
 
 - *conversion_timeout*: The maximum time in seconds that the conversion process can take.
 - *optimizations*: List of optimizations that should be applied to each model.
@@ -230,7 +230,7 @@ The output of this module is a set of C++ files for each model, which can be use
 
 ### Convert to Edge Impulse
 
-This module converts TFLite models into the Edge Impulse format by uploading the models to the Edge Impulse cloud and downloading the required files. The user must have an Edge Impulse account and provide their *API Key* and *Project ID*. These should be placed in the file located at *benchmarking/models/platforms/EI/configs/EI_converter_user_config.yaml* under the keys *ei_api_key* and *ei_project_id*, respectively.
+This module converts TFLite models into the Edge Impulse format by uploading the models to the Edge Impulse cloud and downloading the required files. The user must have an Edge Impulse account and provide their *API Key* and *Project ID*. These should be placed in the file located at *edgemark/models/platforms/EI/configs/EI_converter_user_config.yaml* under the keys *ei_api_key* and *ei_project_id*, respectively.
 
 !!! note
     Edge Impulse only supports the *basic* and *q_full_int_only* optimizations. Other types of optimizations will be ignored.
@@ -253,7 +253,7 @@ The results are: *Execution Time*, *Flash and RAM Usage*, and *Error*.
 !!! tip
     All details, generated files, results and error messages related to each model can be found in the model's directory under *saved_models/{TensorFlow/Ekkono}/{model_type}/{time_tag}*
 
-The configuration options for this module can be found in *benchmarking/models/automate/configs/automate_config.yaml* which includes:
+The configuration options for this module can be found in *edgemark/models/automate/configs/automate_config.yaml* which includes:
 
 - *arena_finder*: If enabled, the script will attempt to find the optimal arena size for each TFLM model.
 - *benchmark_overall_timeout*: Specifies the maximum duration in seconds for the entire benchmarking process.
@@ -261,8 +261,8 @@ The configuration options for this module can be found in *benchmarking/models/a
 
 ### (Bonus) Result plotter
 
-The *Result plotter* script in *benchmarking/models/utils/result_plotter.py* will help you generate figures comparing the results of your benchmark. Please see its API for more information.
+The *Result plotter* script in *edgemark/models/utils/result_plotter.py* will help you generate figures comparing the results of your benchmark. Please see its API for more information.
 
 !!! success "You are ready to go!"
 
-    You now have all the information you need to use the Benchmarking tool. We hope you find it useful 😊
+    You now have all the information you need to use the EdgeMark. We hope you find it useful 😊
