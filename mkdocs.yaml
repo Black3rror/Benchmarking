@@ -5,6 +5,8 @@ docs_dir: docs/source
 theme:
   language: en
   name: material
+  favicon: figures/logo_bg_dark.png
+  logo: figures/logo_transparent.png
   palette:
     # Palette toggle for light mode
     - scheme: default
