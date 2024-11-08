@@ -25,7 +25,7 @@ It is easy to use *EdgeMark*. You just need to:
         ```
         { .annotate }
 
-        1. The Makefile is a wrapper around the Python script. It will run the script with the same command as in *Python*. It exists just for convenience.
+        1. :man_raising_hand: The Makefile is a wrapper around the Python script. It will run the script with the same command as in *Python*. It exists just for convenience.
 
 3. Follow the instructions on the screen.
 
@@ -35,7 +35,14 @@ It is easy to use *EdgeMark*. You just need to:
 
 ## Project Setup
 
-After cloning the repository, several tools need to be connected to the project in order to provide certain functionalities. While these requirements are mostly guided through the instructions of the *main* script, we will provide more detailed explanations here.
+You can obtain the project's repository by either cloning it using *git* (1) or downloading it as a ZIP file directly from the [GitHub page](https://github.com/Black3rror/EdgeMark). To run the project, you'll need to have *Python* installed on your machine (2). We recommend using a virtual environment to isolate dependencies and prevent conflicts with other Python projects. If you prefer, you can use *Conda*, which conveniently manages virtual environments and can also install Python for you. (3)
+{ .annotate }
+
+1. :man_raising_hand: If you don't have *git* installed, you can download it from [here](https://git-scm.com/downloads).
+2. :man_raising_hand: The project has been tested with Python 3.11. You can download the appropriate version from [here](https:/www.python.org/downloads).
+3. :man_raising_hand: To use *Conda*, you can download and install *Anaconda* from [here](https://www.anaconda.com/download).
+
+After obtaining the repository, several tools need to be connected to the project in order to provide certain functionalities. While these requirements are mostly guided through the instructions of the *main* script, we will provide more detailed explanations here.
 
 ### Edge Impulse secrets
 
