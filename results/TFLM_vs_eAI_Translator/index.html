@@ -17,16 +17,16 @@
         <link rel="next" href="../RNN_LSTM_GRU/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
+      <link rel="icon" href="../../figures/logo_bg_dark.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
-        <title>TFLM vs eAI Translator - Benchmarking</title>
+        <title>TFLM vs eAI Translator - EdgeMark</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -103,10 +103,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Benchmarking" class="md-header__button md-logo" aria-label="Benchmarking" data-md-component="logo">
+    <a href="../.." title="EdgeMark" class="md-header__button md-logo" aria-label="EdgeMark" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../figures/logo_transparent.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -117,7 +116,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Benchmarking
+            EdgeMark
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -226,13 +225,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Benchmarking" class="md-nav__button md-logo" aria-label="Benchmarking" data-md-component="logo">
+    <a href="../.." title="EdgeMark" class="md-nav__button md-logo" aria-label="EdgeMark" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../figures/logo_transparent.png" alt="logo">
 
     </a>
-    Benchmarking
+    EdgeMark
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -1151,7 +1149,7 @@
 <p>The goal of this study is to compare the performance of TensorFlow Lite for Microcontrollers (TFLM) and Renesas eAI Translator.</p>
 <p class="annotate">According to the eAI Translator's documentation, it should be able to convert RNN models. However, we faced some errors during the conversion (1). As a result, this study focuses on FC, CNN, and TinyMLPerf models. Also, eAI Translator is designed to work with Renesas boards, so we only have the RenesasRX65N board in our study.</p>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> Still, we guess it should be possible to convert RNN models with some modifications and under certain conditions.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> Still, we guess it should be possible to convert RNN models with some modifications and under certain conditions.</li>
 </ol>
 <p><br/></p>
 <p>Model Type:
@@ -1274,13 +1272,13 @@
 <li>
 <p class="annotate">Some models failed to run on the board. (1)</p>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> For the failed FC models, the program halts for an unknown reason. For the failed TinyMLPerf models, the program is too large for the RenesasRX65N board.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> For the failed FC models, the program halts for an unknown reason. For the failed TinyMLPerf models, the program is too large for the RenesasRX65N board.</li>
 </ol>
 </li>
 <li>
 <p class="annotate">The error rate of the TFLM and eAI Translator models are normally the same, but for some big models, the eAI Translator has an unacceptable error. (1)</p>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> Namely, <em>CNN_5</em>, <em>CNN_6</em>, <em>CNN_7</em>, <em>TinyMLPerf_MBNet</em>, and <em>TinyMLPerf_ResNet</em> models.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> Namely, <em>CNN_5</em>, <em>CNN_6</em>, <em>CNN_7</em>, <em>TinyMLPerf_MBNet</em>, and <em>TinyMLPerf_ResNet</em> models.</li>
 </ol>
 </li>
 </ul>
@@ -1294,7 +1292,7 @@
 <li>
 <p class="annotate">eAI Translator is usually better. (1)</p>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> eAI Translator is better especially for smaller models. For bigger ones the two are almost the same, or TFLM might even get a bit better.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> eAI Translator is better especially for smaller models. For bigger ones the two are almost the same, or TFLM might even get a bit better.</li>
 </ol>
 </li>
 </ul>
@@ -1447,7 +1445,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.indexes", "navigation.footer", "content.code.copy", "content.code.annotate", "content.tooltips", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});

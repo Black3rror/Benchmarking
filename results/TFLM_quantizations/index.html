@@ -17,16 +17,16 @@
         <link rel="next" href="../TFLM_pruning_and_clustering/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
+      <link rel="icon" href="../../figures/logo_bg_dark.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
-        <title>TFLM Quantizations - Benchmarking</title>
+        <title>TFLM Quantizations - EdgeMark</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -103,10 +103,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Benchmarking" class="md-header__button md-logo" aria-label="Benchmarking" data-md-component="logo">
+    <a href="../.." title="EdgeMark" class="md-header__button md-logo" aria-label="EdgeMark" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../figures/logo_transparent.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -117,7 +116,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Benchmarking
+            EdgeMark
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -226,13 +225,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Benchmarking" class="md-nav__button md-logo" aria-label="Benchmarking" data-md-component="logo">
+    <a href="../.." title="EdgeMark" class="md-nav__button md-logo" aria-label="EdgeMark" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../figures/logo_transparent.png" alt="logo">
 
     </a>
-    Benchmarking
+    EdgeMark
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -1150,14 +1148,14 @@
 <h1 id="tflm-quantizations">TFLM Quantizations</h1>
 <p class="annotate">In this study, we evaluate the performance of various quantization schemes using the TensorFlow Lite for Microcontrollers (TFLM) platform. We chose TFLM because it is the only framework that supports the majority of available quantization methods. (1)</p>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> TFLM supports <em>basic</em>, <em>dynamic</em>, <em>int8</em>, <em>int8 only</em>, <em>16x8</em>, and <em>16x8 only</em> quantizations, but does not support <del class="critic"><em>float16</em></del>. In contrast, Edge Impulse and Renesas eAI Translator only support <em>basic</em> and <em>int8 only</em> quantizations, while Ekkono supports only <em>basic</em> quantization.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> TFLM supports <em>basic</em>, <em>dynamic</em>, <em>int8</em>, <em>int8 only</em>, <em>16x8</em>, and <em>16x8 only</em> quantizations, but does not support <del class="critic"><em>float16</em></del>. In contrast, Edge Impulse and Renesas eAI Translator only support <em>basic</em> and <em>int8 only</em> quantizations, while Ekkono supports only <em>basic</em> quantization.</li>
 </ol>
 <p>All FC and CNN models were tested on the NUCLEO-L4R5ZI and RenesasRX65N boards.</p>
 <div class="admonition info">
 <p class="admonition-title">CMSIS-NN</p>
 <p class="annotate">The <em>CMSIS-NN</em> library can help to accelerate the execution of quantized models (1). This library is designed for ARM Cortex-M microcontrollers and was used with the NUCLEO-L4R5ZI board. Renesas has developed its own <em>CMSIS-NN</em> library for RX microcontrollers, but it was not employed in our evaluations.</p>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> "CMSIS-NN supports int8 and int16 activations and int8 weights. It also supports int4 packed weights to some extent." <a href="https://github.com/tensorflow/tflite-micro/issues/2473#issuecomment-1966191977">reference</a></li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> "CMSIS-NN supports int8 and int16 activations and int8 weights. It also supports int4 packed weights to some extent." <a href="https://github.com/tensorflow/tflite-micro/issues/2473#issuecomment-1966191977">reference</a></li>
 </ol>
 </div>
 <p><br/></p>
@@ -1307,19 +1305,19 @@
 <li>
 <p class="annotate">The <em>dynamic</em> quantization also lacks a proper support (1). So, it is recommended to avoid using the <em>dynamic</em> quantization.</p>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> In most cases, either the models fail to run on the boards, or they have an unacceptable error. Even when ignoring the errors, we cannot say that the <em>dynamic</em> quantization has any superiority over other types of quantizations.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> In most cases, either the models fail to run on the boards, or they have an unacceptable error. Even when ignoring the errors, we cannot say that the <em>dynamic</em> quantization has any superiority over other types of quantizations.</li>
 </ol>
 </li>
 <li>
 <p class="annotate">The RenesasRX65N board is unable to run some of the models. (1)</p>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The RenesasRX65N board cannot run the <em>basic</em>, <em>int8 only</em>, and <em>16x8 only</em> versions of the <em>FC_1</em> and <em>FC_2</em> models. The program halts during their execution.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The RenesasRX65N board cannot run the <em>basic</em>, <em>int8 only</em>, and <em>16x8 only</em> versions of the <em>FC_1</em> and <em>FC_2</em> models. The program halts during their execution.</li>
 </ol>
 </li>
 <li>
 <p class="annotate">The error rates of all other quantization schemes are acceptable. (1)</p>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> <em>basic</em> is perfect, <em>int8</em> variants and <em>16x8</em> variants have a negligible errors, <em>16x8</em> being better than <em>int8</em>.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> <em>basic</em> is perfect, <em>int8</em> variants and <em>16x8</em> variants have a negligible errors, <em>16x8</em> being better than <em>int8</em>.</li>
 </ol>
 </li>
 </ul>
@@ -1335,8 +1333,8 @@
 <li>
 <p class="annotate"><em>CNN Models</em>: The <em>basic</em> model is very slow (1). The <em>int8</em> and <em>16x8</em> variants are close to each other. (2)</p>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> Because of using the <em>CMSIS-NN</em>, the quantized models (especially the CNN quantized models) experience a significant speedup on the NUCLEO-L4R5ZI board. This library is not utilized on the RenesasRX65N board.</li>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> Still, to some point, following the same pattern as FC for small and large models.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> Because of using the <em>CMSIS-NN</em>, the quantized models (especially the CNN quantized models) experience a significant speedup on the NUCLEO-L4R5ZI board. This library is not utilized on the RenesasRX65N board.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> Still, to some point, following the same pattern as FC for small and large models.</li>
 </ol>
 </li>
 </ul>
@@ -1344,8 +1342,8 @@
 <li>
 <p class="annotate"><strong>Flash Size</strong>: The <em>basic</em> model gets worse as model size increases (1). The others are almost the same. (2)</p>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> All quantization schemes start with relatively similar flash sizes, but as the model scales, the <em>basic</em> version's flash size increases fourfold (four bytes per parameter), whereas the other variants increase by only one byte per parameter.</li>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The <em>only</em> variants of <em>int8</em> and <em>16x8</em> are slightly more efficient in terms of flash usage.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> All quantization schemes start with relatively similar flash sizes, but as the model scales, the <em>basic</em> version's flash size increases fourfold (four bytes per parameter), whereas the other variants increase by only one byte per parameter.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The <em>only</em> variants of <em>int8</em> and <em>16x8</em> are slightly more efficient in terms of flash usage.</li>
 </ol>
 </li>
 <li>
@@ -1354,7 +1352,7 @@
 <li>
 <p class="annotate"><strong>Conclusion</strong>: The choice of quantization scheme depends on many factors, however, the <em>int8 only</em> quantization is a good choice for most cases. (1)</p>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The <em>basic</em> and <em>int8 only</em> variants are the two model types that will be used in other studies.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The <em>basic</em> and <em>int8 only</em> variants are the two model types that will be used in other studies.</li>
 </ol>
 </li>
 </ul>
@@ -1500,7 +1498,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.indexes", "navigation.footer", "content.code.copy", "content.code.annotate", "content.tooltips", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});

@@ -17,16 +17,16 @@
         <link rel="next" href="../results/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
+      <link rel="icon" href="../figures/logo_bg_dark.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
-        <title>How To Use - Benchmarking</title>
+        <title>How To Use - EdgeMark</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -103,10 +103,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Benchmarking" class="md-header__button md-logo" aria-label="Benchmarking" data-md-component="logo">
+    <a href=".." title="EdgeMark" class="md-header__button md-logo" aria-label="EdgeMark" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../figures/logo_transparent.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -117,7 +116,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Benchmarking
+            EdgeMark
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -226,13 +225,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Benchmarking" class="md-nav__button md-logo" aria-label="Benchmarking" data-md-component="logo">
+    <a href=".." title="EdgeMark" class="md-nav__button md-logo" aria-label="EdgeMark" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../figures/logo_transparent.png" alt="logo">
 
     </a>
-    Benchmarking
+    EdgeMark
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -1350,30 +1348,30 @@
 
 
 <h1 id="how-to-use">How To Use</h1>
-<p>It is easy to use the <em>Benchmarking</em> tool. You just need to:</p>
+<p>It is easy to use <em>EdgeMark</em>. You just need to:</p>
 <ol>
 <li>
 <p>Clone the repository and navigate to the root directory of the project.
-    <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Black3rror/Benchmarking.git
-<span class="nb">cd</span><span class="w"> </span>Benchmarking
+    <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Black3rror/EdgeMark.git
+<span class="nb">cd</span><span class="w"> </span>EdgeMark
 </code></pre></div></p>
 </li>
 <li>
 <p class="annotate">Run the <em>main</em> Python script. (1)</p>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> We recommend running the script inside a virtual environment like Conda.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> We recommend running the script inside a virtual environment like Conda.</li>
 </ol>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label><label for="__tabbed_1_2">Makefile</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>benchmarking.main
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>edgemark.main
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <p class="annotate"><div class="highlight"><pre><span></span><code>make<span class="w"> </span><span class="c1"># (1)!</span>
 </code></pre></div></p>
 <ol>
-<li>The Makefile is a wrapper around the Python script. It will run the script with the same command as in <em>Python</em>. It exists just for convenience.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The Makefile is a wrapper around the Python script. It will run the script with the same command as in <em>Python</em>. It exists just for convenience.</li>
 </ol>
 </div>
 </div>
@@ -1384,10 +1382,16 @@
 </li>
 </ol>
 <div class="admonition info">
-<p>On the first run, the script will automatically install the necessary dependencies for itself. On the second run, the user can ask the script to install any additional Python dependencies required for the benchmarking process. Third time is the charm! You should be greeted with the tool's main menu, where you'll be asked to choose your desired action.</p>
+<p>On the first run, the script will automatically install the necessary dependencies for itself. On the second run, the user can ask the script to install any additional Python dependencies required for the automation process. Third time is the charm! You should be greeted with the tool's main menu, where you'll be asked to choose your desired action.</p>
 </div>
 <h2 id="project-setup">Project Setup</h2>
-<p>After cloning the repository, several tools need to be connected to the project in order to provide certain functionalities. While these requirements are mostly guided through the instructions of the <em>main</em> script, we will provide more detailed explanations here.</p>
+<p class="annotate">You can obtain the project's repository by either cloning it using <em>git</em> (1) or downloading it as a ZIP file directly from the <a href="https://github.com/Black3rror/EdgeMark">GitHub page</a>. To run the project, you'll need to have <em>Python</em> installed on your machine (2). We recommend using a virtual environment to isolate dependencies and prevent conflicts with other Python projects. If you prefer, you can use <em>Conda</em>, which conveniently manages virtual environments and can also install Python for you. (3)</p>
+<ol>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> If you don't have <em>git</em> installed, you can download it from <a href="https://git-scm.com/downloads">here</a>.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The project has been tested with Python 3.11. You can download the appropriate version from <a href="https:/www.python.org/downloads">here</a>.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> To use <em>Conda</em>, you can download and install <em>Anaconda</em> from <a href="https://www.anaconda.com/download">here</a>.</li>
+</ol>
+<p>After obtaining the repository, several tools need to be connected to the project in order to provide certain functionalities. While these requirements are mostly guided through the instructions of the <em>main</em> script, we will provide more detailed explanations here.</p>
 <h3 id="edge-impulse-secrets">Edge Impulse secrets</h3>
 <p><small><span style="color:rgb(156, 39, 176);"> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.41 11.58-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 .59 1.42l9 9A2 2 0 0 0 13 22a2 2 0 0 0 1.41-.59l7-7A2 2 0 0 0 22 13a2 2 0 0 0-.59-1.42M13 20l-9-9V4h7l9 9M6.5 5A1.5 1.5 0 1 1 5 6.5 1.5 1.5 0 0 1 6.5 5"/></svg></span> </span> Edge Impulse v1.56.13 (date 12-09-2024) was used in our tests.</small></p>
 <p>To use the <em>Convert to Edge Impulse</em> module, you need to provide your Edge Impulse API Key and Project ID. For this purpose, you need to have an account on Edge Impulse. If you don't have one, you can create it <a href="https://www.edgeimpulse.com">here</a>.</p>
@@ -1396,47 +1400,47 @@
 <li>
 <p class="annotate">The API key can be found in the <em>Keys</em> section of your project. (1)</p>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> You can also access this page by its address: <em>https://studio.edgeimpulse.com/studio/{project_id}/keys</em>.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> You can also access this page by its address: <em>https://studio.edgeimpulse.com/studio/{project_id}/keys</em>.</li>
 </ol>
 </li>
 <li>
 <p class="annotate">The Project ID can be found on the project's main page under the <em>Project info</em> section. (1)</p>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> You can also find it by looking at the URL of the page: <em>https://studio.edgeimpulse.com/studio/<ins>{project_id}</ins></em>.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> You can also find it by looking at the URL of the page: <em>https://studio.edgeimpulse.com/studio/<ins>{project_id}</ins></em>.</li>
 </ol>
 </li>
 </ul>
-<p>After obtaining this information, provide it to the project's <em>main</em> script in order to make the connection. The script will ask you for the API Key and Project ID (if they don't already exist) and saves them in <em>benchmarking/models/platforms/EI/configs/EI_converter_user_config.yaml</em>.</p>
+<p>After obtaining this information, provide it to the project's <em>main</em> script in order to make the connection. The script will ask you for the API Key and Project ID (if they don't already exist) and saves them in <em>edgemark/models/platforms/EI/configs/EI_converter_user_config.yaml</em>.</p>
 <p>Now, you are ready to use the <em>Convert to Edge Impulse</em> module.</p>
 <h3 id="ekkono-sdk">Ekkono SDK</h3>
 <p><small><span style="color:rgb(156, 39, 176);"> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.41 11.58-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 .59 1.42l9 9A2 2 0 0 0 13 22a2 2 0 0 0 1.41-.59l7-7A2 2 0 0 0 22 13a2 2 0 0 0-.59-1.42M13 20l-9-9V4h7l9 9M6.5 5A1.5 1.5 0 1 1 5 6.5 1.5 1.5 0 0 1 6.5 5"/></svg></span> </span> Ekkono SDK v23.10 was used in our tests.</small></p>
 <p class="annotate">As Ekkono is not a free tool, you will need a valid license to use it. You can learn more about Ekkono on their <a href="https://www.ekkono.ai">website</a>. After obtaining the license, you can either install it using <em>pip</em> or provide its path (1) to the <em>main</em> script.</p>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> For example, if you place the files in <em>benchmarking/models/platforms/Ekkono</em>, the path to the Python wheel would be <em>benchmarking/models/platforms/Ekkono/ekkono-sdk/primer/python/{distribution}/{python-version}/ekkono.primer-{name-suffix}.whl</em>.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> For example, if you place the files in <em>edgemark/models/platforms/Ekkono</em>, the path to the Python wheel would be <em>edgemark/models/platforms/Ekkono/ekkono-sdk/primer/python/{distribution}/{python-version}/ekkono.primer-{name-suffix}.whl</em>.</li>
 </ol>
 <p class="annotate">Further, you need to download Ekkono's C inference code and place it in the corresponding unzipped project directory for your specific hardware platform. (1)</p>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> For NUCLEO-L4R5ZI, it will be <em>benchmarking/Hardware/STM32/NUCLEO-L4R5ZI_Ekkono/Core/Inc/Ekkono_lib</em> and for RenesasRX65N, it will be <em>benchmarking/Hardware/Renesas/RenesasRX_Ekkono/src/Ekkono_lib</em>.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> For NUCLEO-L4R5ZI, it will be <em>edgemark/Hardware/STM32/NUCLEO-L4R5ZI_Ekkono/Core/Inc/Ekkono_lib</em> and for RenesasRX65N, it will be <em>edgemark/Hardware/Renesas/RenesasRX_Ekkono/src/Ekkono_lib</em>.</li>
 </ol>
 <p>At this point, you should be able to both generate Ekkono models using the <em>Generate Ekkono models</em> module and proceed with <em>Test on NUCLEO-L4R5ZI/RenesasRX65N</em>.</p>
 <h3 id="stm32cubeide">STM32CubeIDE</h3>
 <p><small><span style="color:rgb(156, 39, 176);"> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.41 11.58-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 .59 1.42l9 9A2 2 0 0 0 13 22a2 2 0 0 0 1.41-.59l7-7A2 2 0 0 0 22 13a2 2 0 0 0-.59-1.42M13 20l-9-9V4h7l9 9M6.5 5A1.5 1.5 0 1 1 5 6.5 1.5 1.5 0 0 1 6.5 5"/></svg></span> </span> STM32CubeIDE v1.14.1 was used in our tests.</small></p>
-<p class="annotate">STM32CubeIDE is required to compile the C/C++ projects for the STM32 boards. You can download it from the <a href="https://www.st.com/en/development-tools/stm32cubeide.html">ST website</a>. After installation, you need to provide its executable path (1) and the workspace directory (2) to the <em>main</em> script. When prompted by the script, enter these details, which will be saved in the file <em>benchmarking/models/automate/hardware_types/NUCLEO-L4R5ZI/configs/hardware_user_config.yaml</em>.</p>
+<p class="annotate">STM32CubeIDE is required to compile the C/C++ projects for the STM32 boards. You can download it from the <a href="https://www.st.com/en/development-tools/stm32cubeide.html">ST website</a>. After installation, you need to provide its executable path (1) and the workspace directory (2) to the <em>main</em> script. When prompted by the script, enter these details, which will be saved in the file <em>edgemark/models/automate/hardware_types/NUCLEO-L4R5ZI/configs/hardware_user_config.yaml</em>.</p>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The executable path can be found at <em>{installation_dir}/STM32CubeIDE_{version}/STM32CubeIDE/stm32cubeide.exe</em>. For example, <em>C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/stm32cubeide.exe</em>.</li>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> You can locate the workspace directory by opening STM32CubeIDE and navigating to <em>File &gt; Switch Workspace &gt; Other...</em>.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The executable path can be found at <em>{installation_dir}/STM32CubeIDE_{version}/STM32CubeIDE/stm32cubeide.exe</em>. For example, <em>C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/stm32cubeide.exe</em>.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> You can locate the workspace directory by opening STM32CubeIDE and navigating to <em>File &gt; Switch Workspace &gt; Other...</em>.</li>
 </ol>
-<p>The next step is to ensure the projects are correctly set up and added to the workspace. The zipped projects can be found in <em>benchmarking/Hardware/STM32</em>. Please unzip them, and then add them to the workspace by opening the STM32CubeIDE and selecting <em>File &gt; Open Projects from File System...</em>. Choose the unzipped project folder and click <em>Finish</em>. The project should now appear in the <em>Project Explorer</em>.</p>
+<p>The next step is to ensure the projects are correctly set up and added to the workspace. The zipped projects can be found in <em>edgemark/Hardware/STM32</em>. Please unzip them, and then add them to the workspace by opening the STM32CubeIDE and selecting <em>File &gt; Open Projects from File System...</em>. Choose the unzipped project folder and click <em>Finish</em>. The project should now appear in the <em>Project Explorer</em>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Please note that the Ekkono library is excluded from the <em>NUCLEO-L4R5ZI_Ekkono</em> project. You need to add it manually. After obtaining the license, you need to download their C inference code and place it in <em>benchmarking/Hardware/STM32/NUCLEO-L4R5ZI_Ekkono/Core/Inc/Ekkono_lib</em></p>
+<p>Please note that the Ekkono library is excluded from the <em>NUCLEO-L4R5ZI_Ekkono</em> project. You need to add it manually. After obtaining the license, you need to download their C inference code and place it in <em>edgemark/Hardware/STM32/NUCLEO-L4R5ZI_Ekkono/Core/Inc/Ekkono_lib</em></p>
 </div>
 <p>Now, the automation script should be able to compile the projects. To upload the compiled programs to the board, the automation script requires the STM32CubeProgrammer CLI, which we'll cover in the next step.</p>
 <h3 id="stm32cubeclt">STM32CubeCLT</h3>
 <p><small><span style="color:rgb(156, 39, 176);"> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.41 11.58-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 .59 1.42l9 9A2 2 0 0 0 13 22a2 2 0 0 0 1.41-.59l7-7A2 2 0 0 0 22 13a2 2 0 0 0-.59-1.42M13 20l-9-9V4h7l9 9M6.5 5A1.5 1.5 0 1 1 5 6.5 1.5 1.5 0 0 1 6.5 5"/></svg></span> </span> STM32CubeProgrammer v2.16.0 was used in our tests.</small></p>
-<p class="annotate">STM32Programmer CLI as a part of STM32CubeCLT allows the automation script to upload the compiled programs to the STM32 boards. You can download it from the <a href="https://www.st.com/en/development-tools/stm32cubeclt.html">ST website</a>. After installation, provide its executable path (1) to the <em>main</em> script when prompted. The path will be saved in <em>benchmarking/models/automate/hardware_types/NUCLEO-L4R5ZI/configs/hardware_user_config.yaml</em>.</p>
+<p class="annotate">STM32Programmer CLI as a part of STM32CubeCLT allows the automation script to upload the compiled programs to the STM32 boards. You can download it from the <a href="https://www.st.com/en/development-tools/stm32cubeclt.html">ST website</a>. After installation, provide its executable path (1) to the <em>main</em> script when prompted. The path will be saved in <em>edgemark/models/automate/hardware_types/NUCLEO-L4R5ZI/configs/hardware_user_config.yaml</em>.</p>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The executable will be in <em>{installation_dir}/STM32CubeCLT_{version}/STM32CubeProgrammer/bin/STM32_programmer_CLI.exe</em>. For example, <em>C:/ST/STM32CubeCLT_1.15.1/STM32CubeProgrammer/bin/STM32_programmer_CLI.exe</em>.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The executable will be in <em>{installation_dir}/STM32CubeCLT_{version}/STM32CubeProgrammer/bin/STM32_programmer_CLI.exe</em>. For example, <em>C:/ST/STM32CubeCLT_1.15.1/STM32CubeProgrammer/bin/STM32_programmer_CLI.exe</em>.</li>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1445,15 +1449,15 @@
 <p>At this point, you should be ready to use the <em>Test on NUCLEO-L4R5ZI</em> module.</p>
 <h3 id="renesas-e2-studio">Renesas e2 studio</h3>
 <p><small><span style="color:rgb(156, 39, 176);"> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.41 11.58-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 .59 1.42l9 9A2 2 0 0 0 13 22a2 2 0 0 0 1.41-.59l7-7A2 2 0 0 0 22 13a2 2 0 0 0-.59-1.42M13 20l-9-9V4h7l9 9M6.5 5A1.5 1.5 0 1 1 5 6.5 1.5 1.5 0 0 1 6.5 5"/></svg></span> </span> Renesas e2 studio v24.1.1 was used in our tests.</small></p>
-<p class="annotate">Renesas e2 studio is required to compile the C/C++ projects for the Renesas boards. You can download it from the <a href="https://www.renesas.com/us/en/software-tool/e-studio">Renesas website</a>. After installation, you need to provide its executable path (1) and the workspace directory (2) to the <em>main</em> script. When prompted by the script, enter these details, which will be saved in the file <em>benchmarking/models/automate/hardware_types/RenesasRX65N/configs/hardware_user_config.yaml</em>.</p>
+<p class="annotate">Renesas e2 studio is required to compile the C/C++ projects for the Renesas boards. You can download it from the <a href="https://www.renesas.com/us/en/software-tool/e-studio">Renesas website</a>. After installation, you need to provide its executable path (1) and the workspace directory (2) to the <em>main</em> script. When prompted by the script, enter these details, which will be saved in the file <em>edgemark/models/automate/hardware_types/RenesasRX65N/configs/hardware_user_config.yaml</em>.</p>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The executable will be <em>{installation_dir}/Renesas/e2_studio/eclipse/e2studioc.exe</em>. For example, <em>C:/Renesas/e2_studio/eclipse/e2studioc.exe</em>.</li>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> You can locate the workspace directory by opening e2 studio and navigating to <em>File &gt; Switch Workspace &gt; Other...</em>.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The executable will be <em>{installation_dir}/Renesas/e2_studio/eclipse/e2studioc.exe</em>. For example, <em>C:/Renesas/e2_studio/eclipse/e2studioc.exe</em>.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> You can locate the workspace directory by opening e2 studio and navigating to <em>File &gt; Switch Workspace &gt; Other...</em>.</li>
 </ol>
-<p>The next step is to ensure the projects are correctly set up and added to the workspace. The zipped projects can be found in <em>benchmarking/Hardware/Renesas</em>. Please unzip them, and then add them to the workspace by opening e2 studio and selecting <em>File &gt; Open Projects from File System...</em>. Choose the unzipped project folder and click <em>Finish</em>. The project should now appear in the <em>Project Explorer</em>.</p>
+<p>The next step is to ensure the projects are correctly set up and added to the workspace. The zipped projects can be found in <em>edgemark/Hardware/Renesas</em>. Please unzip them, and then add them to the workspace by opening e2 studio and selecting <em>File &gt; Open Projects from File System...</em>. Choose the unzipped project folder and click <em>Finish</em>. The project should now appear in the <em>Project Explorer</em>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Please note that the Ekkono library is excluded from the <em>RenesasRX_Ekkono</em> project. You need to add it manually. After obtaining the license, you need to download their C inference code and place it in <em>benchmarking/Hardware/Renesas/RenesasRX_Ekkono/src/Ekkono_lib</em></p>
+<p>Please note that the Ekkono library is excluded from the <em>RenesasRX_Ekkono</em> project. You need to add it manually. After obtaining the license, you need to download their C inference code and place it in <em>edgemark/Hardware/Renesas/RenesasRX_Ekkono/src/Ekkono_lib</em></p>
 </div>
 <p>Now, the automation script should be able to compile the projects. To upload the compiled programs to the board, the automation script requires the Renesas Flash Programmer, which we'll cover in the next step.</p>
 <h3 id="renesas-flash-programmer">Renesas Flash Programmer</h3>
@@ -1467,10 +1471,10 @@
 <li><em>Interface</em>: FINE</li>
 </ul>
 <p>Additionally, click <em>Tool Details</em>, go to <em>Reset Settings</em>, and configure <em>Reset signal at Disconnection</em> to <em>Reset Pin as Hi-Z</em>. After these steps, click <em>Connect</em>.</p>
-<p class="annotate">In the next step you need to provide the RFP's executable path (1) and its project path (2) to the <em>main</em> script. Run the script and provide them when asked. The script will save them in <em>benchmarking/models/automate/hardware_types/RenesasRX65N/configs/hardware_user_config.yaml</em>.</p>
+<p class="annotate">In the next step you need to provide the RFP's executable path (1) and its project path (2) to the <em>main</em> script. Run the script and provide them when asked. The script will save them in <em>edgemark/models/automate/hardware_types/RenesasRX65N/configs/hardware_user_config.yaml</em>.</p>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The executable will be <em>{installation_dir}/Renesas Electronics/Programming Tools/Renesas Flash Programmer V{version}/RFPV{version}.exe</em>. For example, <em>C:/Program Files (x86)/Renesas Electronics/Programming Tools/Renesas Flash Programmer V3.15/RFPV3.exe</em></li>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The project file is a <em>.rpj</em> file, located in the folder you selected earlier.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The executable will be <em>{installation_dir}/Renesas Electronics/Programming Tools/Renesas Flash Programmer V{version}/RFPV{version}.exe</em>. For example, <em>C:/Program Files (x86)/Renesas Electronics/Programming Tools/Renesas Flash Programmer V3.15/RFPV3.exe</em></li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The project file is a <em>.rpj</em> file, located in the folder you selected earlier.</li>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1479,13 +1483,13 @@
 <p>Unlike the NUCLEO-L4R5ZI board, the Renesas RX65N target board does not connect to the PC via its programmer for serial communication. To establish a serial connection, you’ll need to connect the board to the PC using a USB-to-TTL cable. Connect the USB side to the PC, and on the TTL side, connect the <em>GND</em> to the <em>GND</em> pin on the board (pin 61), and the <em>RX</em> to the <em>TX</em> pin on the board (pin 45). Be sure to install the necessary driver on your PC before proceeding.</p>
 <p>Now, you're ready to use the <em>Test on RenesasRX65N</em> module.</p>
 <h2 id="modules">Modules</h2>
-<p>As mentioned in the <a href="../">Home page</a>, the project consists of multiple modules. The modules can be run one after another to reach the final goal. The <em>benchmarking.main</em> script provides an intuitive interface for managing the execution of these modules. Below, we describe each module, their requirements, relationships, and key configurations that might be of your interest to change.</p>
+<p>As mentioned in the <a href="../">Home page</a>, the project consists of multiple modules. The modules can be run one after another to reach the final goal. The <em>edgemark.main</em> script provides an intuitive interface for managing the execution of these modules. Below, we describe each module, their requirements, relationships, and key configurations that might be of your interest to change.</p>
 <p><a class="glightbox" href="../figures/modules.png#only-light" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Modules" src="../figures/modules.png#only-light" /></a>
 <a class="glightbox" href="../figures/modules%20-%20dark.png#only-dark" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Modules" src="../figures/modules%20-%20dark.png#only-dark" /></a></p>
 <h3 id="generate-tf-models">Generate TF models</h3>
 <p>You should describe the desired models in <em>Model Description Files</em>. The <em>Model Generator</em> produces TensorFlow models based on these files.</p>
 <p>The <em>Model Description Files</em> are YAML files located in <em>target_models</em> directory. The name of the model will be the path to the file without the extension. If the name of the file or any directory leading to that file begins with a dot (.), the file will be ignored. Please refer to the <a href="../model_description_files/">Model Description Files</a> page for more detailed instructions on creating these files.</p>
-<p>Configurations for this module are located in <em>benchmarking/models/platforms/TensorFlow/configs/model_generator_config.yaml</em>. Below are the primary configurations you may want to modify:</p>
+<p>Configurations for this module are located in <em>edgemark/models/platforms/TensorFlow/configs/model_generator_config.yaml</em>. Below are the primary configurations you may want to modify:</p>
 <ul>
 <li><em>wandb_online</em>: Enables cloud-based logging through W&amp;B (Weights &amp; Biases). Otherwise, logs are saved locally.</li>
 <li><em>wandb_project_name</em>: Specifies the W&amp;B project name.</li>
@@ -1503,7 +1507,7 @@
 </div>
 <p>Same as <em>Generate TF models</em>, this module takes in the <em>Model Description Files</em>. These files can be the same ones used for generating TensorFlow models; however, please note the limitations of Ekkono. For example, Ekkono does not support CNNs, so any file containing CNN layers will result in an error.</p>
 <p>Since Ekkono operates in its own environment, we have streamlined the generation and conversion steps into a single module. The output of this module consists of Ekkono's Crystal models along with the necessary C files for benchmarking.</p>
-<p>The configuration is similar to the TensorFlow module and can be found in <em>benchmarking/models/platforms/Ekkono/configs/model_generator_config.yaml</em>. Key configurations include:</p>
+<p>The configuration is similar to the TensorFlow module and can be found in <em>edgemark/models/platforms/Ekkono/configs/model_generator_config.yaml</em>. Key configurations include:</p>
 <ul>
 <li><em>wandb_online</em>: Enables cloud-based logging through W&amp;B (Weights &amp; Biases). Otherwise, logs are saved locally.</li>
 <li><em>wandb_project_name</em>: Specifies the W&amp;B project name.</li>
@@ -1515,7 +1519,7 @@
 </ul>
 <h3 id="convert-to-tflite">Convert to TFLite</h3>
 <p>Once TensorFlow models are generated, you can use the <em>Convert to TFLite</em> module to convert the models into TFLite format. Various optimizations can be applied to the models during this conversion.</p>
-<p>The configuration file is located at <em>benchmarking/models/platforms/TFLite/configs/TFLite_converter_config.yaml</em>. Key configurations include:</p>
+<p>The configuration file is located at <em>edgemark/models/platforms/TFLite/configs/TFLite_converter_config.yaml</em>. Key configurations include:</p>
 <ul>
 <li><em>conversion_timeout</em>: The maximum time in seconds that the conversion process can take.</li>
 <li><em>optimizations</em>: List of optimizations that should be applied to each model.</li>
@@ -1545,7 +1549,7 @@
 </div>
 <p>The output of this module is a set of C++ files for each model, which can be used for benchmarking or integrated into any other C++ project.</p>
 <h3 id="convert-to-edge-impulse">Convert to Edge Impulse</h3>
-<p>This module converts TFLite models into the Edge Impulse format by uploading the models to the Edge Impulse cloud and downloading the required files. The user must have an Edge Impulse account and provide their <em>API Key</em> and <em>Project ID</em>. These should be placed in the file located at <em>benchmarking/models/platforms/EI/configs/EI_converter_user_config.yaml</em> under the keys <em>ei_api_key</em> and <em>ei_project_id</em>, respectively.</p>
+<p>This module converts TFLite models into the Edge Impulse format by uploading the models to the Edge Impulse cloud and downloading the required files. The user must have an Edge Impulse account and provide their <em>API Key</em> and <em>Project ID</em>. These should be placed in the file located at <em>edgemark/models/platforms/EI/configs/EI_converter_user_config.yaml</em> under the keys <em>ei_api_key</em> and <em>ei_project_id</em>, respectively.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Edge Impulse only supports the <em>basic</em> and <em>q_full_int_only</em> optimizations. Other types of optimizations will be ignored.</p>
@@ -1564,17 +1568,17 @@
 <p class="admonition-title">Tip</p>
 <p>All details, generated files, results and error messages related to each model can be found in the model's directory under <em>saved_models/{TensorFlow/Ekkono}/{model_type}/{time_tag}</em></p>
 </div>
-<p>The configuration options for this module can be found in <em>benchmarking/models/automate/configs/automate_config.yaml</em> which includes:</p>
+<p>The configuration options for this module can be found in <em>edgemark/models/automate/configs/automate_config.yaml</em> which includes:</p>
 <ul>
 <li><em>arena_finder</em>: If enabled, the script will attempt to find the optimal arena size for each TFLM model.</li>
 <li><em>benchmark_overall_timeout</em>: Specifies the maximum duration in seconds for the entire benchmarking process.</li>
 <li><em>benchmark_silence_timeout</em>: Specifies the maximum duration in seconds that the board is allowed to remain silent without any output.</li>
 </ul>
 <h3 id="bonus-result-plotter">(Bonus) Result plotter</h3>
-<p>The <em>Result plotter</em> script in <em>benchmarking/models/utils/result_plotter.py</em> will help you generate figures comparing the results of your benchmark. Please see its API for more information.</p>
+<p>The <em>Result plotter</em> script in <em>edgemark/models/utils/result_plotter.py</em> will help you generate figures comparing the results of your benchmark. Please see its API for more information.</p>
 <div class="admonition success">
 <p class="admonition-title">You are ready to go!</p>
-<p>You now have all the information you need to use the Benchmarking tool. We hope you find it useful 😊</p>
+<p>You now have all the information you need to use the EdgeMark. We hope you find it useful 😊</p>
 </div>
 
 
@@ -1665,7 +1669,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.indexes", "navigation.footer", "content.code.copy", "content.code.annotate", "content.tooltips", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});

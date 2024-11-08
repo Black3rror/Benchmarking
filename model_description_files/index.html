@@ -13,16 +13,16 @@
       
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
+      <link rel="icon" href="../figures/logo_bg_dark.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
-        <title>Model description files - Benchmarking</title>
+        <title>Model description files - EdgeMark</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -99,10 +99,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Benchmarking" class="md-header__button md-logo" aria-label="Benchmarking" data-md-component="logo">
+    <a href=".." title="EdgeMark" class="md-header__button md-logo" aria-label="EdgeMark" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../figures/logo_transparent.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -113,7 +112,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Benchmarking
+            EdgeMark
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -222,13 +221,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Benchmarking" class="md-nav__button md-logo" aria-label="Benchmarking" data-md-component="logo">
+    <a href=".." title="EdgeMark" class="md-nav__button md-logo" aria-label="EdgeMark" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../figures/logo_transparent.png" alt="logo">
 
     </a>
-    Benchmarking
+    EdgeMark
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -1047,15 +1045,17 @@
 
   <h1>Model description files</h1>
 
-<p>Each <em>YAML</em> file in this directory or its subdirectories represents a target model. In order to exclude a target model from the benchmarking process, simply add <em>dot (.)</em> to the beginning of the file name. For example, to exclude the target model <em>target_model.yaml</em>, rename it to <em>.target_model.yaml</em>. All targets in a directory can be excluded by adding <em>dot (.)</em> to the beginning of the directory name.</p>
-<p>Each target can be one of the following types:
-- <em>CNN</em>: A combination of CNN layers followed by a number of fully connected layers. CNN layers can be left empty in order to create a fully connected network.
-- <em>CNN_MBNet</em>: The MobileNetV2 network.
-- <em>RNN</em>: Recurrent neural network, including simple RNN, LSTM, and GRU.
-- <em>TinyMLPerf_AE</em>: The model used in the TinyMLPerf benchmarking suite for anomaly detection.
-- <em>TinyMLPerf_DS_CNN</em>: The model used in the TinyMLPerf benchmarking suite for keyword spotting.
-- <em>TinyMLPerf_MBNet</em>: The model used in the TinyMLPerf benchmarking suite for image classification.
-- <em>TinyMLPerf_ResNet</em>: The model used in the TinyMLPerf benchmarking suite for image classification.</p>
+<p>Each <em>YAML</em> file in this directory or its subdirectories represents a target model. In order to exclude a target model from the model generation process, simply add <em>dot (.)</em> to the beginning of the file name. For example, to exclude the target model <em>target_model.yaml</em>, rename it to <em>.target_model.yaml</em>. All targets in a directory can be excluded by adding <em>dot (.)</em> to the beginning of the directory name.</p>
+<p>Each target can be one of the following types:</p>
+<ul>
+<li><em>CNN</em>: A combination of CNN layers followed by a number of fully connected layers. CNN layers can be left empty in order to create a fully connected network.</li>
+<li><em>CNN_MBNet</em>: The MobileNetV2 network.</li>
+<li><em>RNN</em>: Recurrent neural network, including simple RNN, LSTM, and GRU.</li>
+<li><em>TinyMLPerf_AE</em>: The model used in the TinyMLPerf benchmarking suite for anomaly detection.</li>
+<li><em>TinyMLPerf_DS_CNN</em>: The model used in the TinyMLPerf benchmarking suite for keyword spotting.</li>
+<li><em>TinyMLPerf_MBNet</em>: The model used in the TinyMLPerf benchmarking suite for image classification.</li>
+<li><em>TinyMLPerf_ResNet</em>: The model used in the TinyMLPerf benchmarking suite for image classification.</li>
+</ul>
 <h2 id="cnn">CNN</h2>
 <p>The CNN target model should be defined like this:
 <div class="highlight"><pre><span></span><code><span class="nt">model_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;CNN&quot;</span>
@@ -1240,7 +1240,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.indexes", "navigation.footer", "content.code.copy", "content.code.annotate", "content.tooltips", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});

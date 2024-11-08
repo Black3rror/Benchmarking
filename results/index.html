@@ -17,16 +17,16 @@
         <link rel="next" href="TFLM_quantizations/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
+      <link rel="icon" href="../figures/logo_bg_dark.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
-        <title>Results - Benchmarking</title>
+        <title>Results - EdgeMark</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -103,10 +103,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Benchmarking" class="md-header__button md-logo" aria-label="Benchmarking" data-md-component="logo">
+    <a href=".." title="EdgeMark" class="md-header__button md-logo" aria-label="EdgeMark" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../figures/logo_transparent.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -117,7 +116,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Benchmarking
+            EdgeMark
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -226,13 +225,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Benchmarking" class="md-nav__button md-logo" aria-label="Benchmarking" data-md-component="logo">
+    <a href=".." title="EdgeMark" class="md-nav__button md-logo" aria-label="EdgeMark" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../figures/logo_transparent.png" alt="logo">
 
     </a>
-    Benchmarking
+    EdgeMark
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -1070,7 +1068,7 @@
 <li>
 <p class="annotate">Execution Time: The time it takes to run the model on the target device. It is measured by iteratively running the model for 10 times and taking the average. (1)</p>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The input to the model remains the same for each iteration. Changing the input, having a warm-up phase, or re-running the test have negligible to no effect on the results. Additionally, the standard deviation of the execution time is negligible and is saved in the detailed results.</li>
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The input to the model remains the same for each iteration. Changing the input, having a warm-up phase, or re-running the test have negligible to no effect on the results. Additionally, the standard deviation of the execution time is negligible and is saved in the detailed results.</li>
 </ol>
 </li>
 <li>
@@ -1079,7 +1077,7 @@
 <li>
 <p class="annotate">Flash Size: The program's flash memory size. (1)</p>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The GCC compiler reports the sizes of the <em>text</em>, <em>data</em>, and <em>bss</em> sections.
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> The GCC compiler reports the sizes of the <em>text</em>, <em>data</em>, and <em>bss</em> sections.
 <p>By default, <em>Flash</em> = <em>text</em> + <em>data</em>, but since the tested tools have a negligible effect on the <em>data</em> section and the <em>data</em> section is primarily used for storing data samples (which we want exclude from affecting the flash size), we assume <em>Flash</em> = <em>text</em>.</p>
 <p><ul>
     <li>For the NUCLEO-L4R5ZI C/C++ project, the base program (including printf and timer functionalities but without any model or library) occupies (text=28000, data=476, and bss=3568) bytes.</li>
@@ -1092,7 +1090,7 @@
 <li>
 <p class="annotate">RAM Usage: The program's RAM usage. (1)</p>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> Since all tested tools follow a static memory allocation strategy, the RAM usage can be inferred from the GCC compiler's report. Typically, <em>RAM</em> = <em>data</em> + <em>bss</em>, but since the <em>data</em> section primarily holds data samples (which we do not want to affect RAM calculations), we assume <em>RAM</em> = <em>bss</em>.
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> Since all tested tools follow a static memory allocation strategy, the RAM usage can be inferred from the GCC compiler's report. Typically, <em>RAM</em> = <em>data</em> + <em>bss</em>, but since the <em>data</em> section primarily holds data samples (which we do not want to affect RAM calculations), we assume <em>RAM</em> = <em>bss</em>.
 <p>For TFLM, we set the <em>arena_size</em> parameter, which modifies the size of the <em>bss</em> section. To find the minimum viable <em>arena_size</em> for each model, we incrementally increased the <em>arena_size</em> with a small step-size until the program ran successfully. The <em>bss</em> size of the program with the minimum <em>arena_size</em> is taken as the program's RAM usage.</p></li>
 </ol>
 </li>
@@ -1313,7 +1311,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.indexes", "navigation.footer", "content.code.copy", "content.code.annotate", "content.tooltips", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
