@@ -1,0 +1,16 @@
+model_type: "CNN"
+convs_params: []
+denses_params: []
+convs_dropout: 0.00
+denses_dropout: 0.00
+activation: "sigmoid"
+use_batch_norm: False
+epochs: 50
+batch_size: 32
+dataset:
+  name: "sinus"
+  args:
+    n_samples: 100000
+    test_ratio: 0.2
+    random_seed: 42
+random_seed: 42

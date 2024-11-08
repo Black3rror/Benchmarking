@@ -1,0 +1,21 @@
+model_type: "CNN"
+convs_params: [
+    [8, 3, 1],
+    [8, 3, 2],
+    [16, 3, 1],
+    [16, 3, 2],
+    [32, 3, 1],
+    [0, 0, 0]
+]
+denses_params: [64, 16]
+convs_dropout: 0.0
+denses_dropout: 0.0
+activation: "relu"
+use_batch_norm: False
+epochs: 50
+batch_size: 32
+dataset:
+  name: "mnist"
+  args:
+    flat_features: False
+random_seed: 42

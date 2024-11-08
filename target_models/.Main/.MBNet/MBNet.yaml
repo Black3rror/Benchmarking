@@ -1,0 +1,10 @@
+model_type: "CNN_MBNet"
+epochs: 10
+batch_size: 32
+dataset:
+  name: "imagenet_v2"
+  path: "benchmarking/models/datasets/${dataset.name}/data.py"
+  args:
+    test_ratio: 0.2
+    random_seed: 42
+random_seed: 42

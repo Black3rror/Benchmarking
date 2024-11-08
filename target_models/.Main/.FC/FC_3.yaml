@@ -1,0 +1,18 @@
+model_type: "CNN"
+convs_params: []
+denses_params: [16, 8]
+convs_dropout: 0.00
+denses_dropout: 0.00
+activation: "relu"
+use_batch_norm: False
+epochs: 50
+batch_size: 32
+dataset:
+  name: "randomset_classification"
+  args:
+    n_samples: 1000
+    test_ratio: 0.2
+    feature_shape: [50]
+    num_labels: 10
+    random_seed: 42
+random_seed: 42

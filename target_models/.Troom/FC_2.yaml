@@ -1,0 +1,16 @@
+model_type: "CNN"
+convs_params: []
+denses_params: [60, 32, 16]
+convs_dropout: 0.00
+denses_dropout: 0.00
+activation: "relu"
+use_batch_norm: True
+epochs: 50
+batch_size: 32
+dataset:
+  name: "troom"
+  args:
+    test_ratio: 0.2
+    normalize: True
+    random_seed: 42
+random_seed: 42

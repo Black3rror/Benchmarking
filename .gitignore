@@ -1,6 +1,5 @@
 # project specific
 /.git_backup/
-/target_models/
 /saved_models/
 /linkers/
 /tutorials/

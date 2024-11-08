@@ -1,0 +1,14 @@
+model_type: "CNN"
+convs_params: []
+denses_params: [850, 256, 128, 64, 32]
+convs_dropout: 0.00
+denses_dropout: 0.10
+activation: "relu"
+use_batch_norm: True
+epochs: 50
+batch_size: 32
+dataset:
+  name: "cifar10"
+  args:
+    flat_features: true
+random_seed: 42

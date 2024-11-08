@@ -1,0 +1,13 @@
+model_type: "CNN"
+convs_params: []
+denses_params: [128, 128, 128]
+convs_dropout: 0.00
+denses_dropout: 0.10
+activation: "relu"
+use_batch_norm: True
+epochs: 50
+batch_size: 32
+dataset:
+  name: "boston"
+  args: {}
+random_seed: 42

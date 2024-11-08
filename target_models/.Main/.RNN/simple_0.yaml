@@ -1,0 +1,19 @@
+model_type: "RNN"
+rnn_type: "SimpleRNN"
+embedding_dim: null
+rnn_units: 1
+epochs: 50
+batch_size: 32
+dataset:
+  name: "randomset_seq"
+  path: "benchmarking/models/datasets/${dataset.name}/data.py"
+  args:
+    n_samples: 1000
+    test_ratio: 0.2
+    input_size: 1
+    output_size: 1
+    sequence_length: 2
+    sequential_output: true
+    using_embedding: false
+    random_seed: 42
+random_seed: 42

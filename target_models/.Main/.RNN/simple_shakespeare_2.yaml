@@ -1,0 +1,14 @@
+model_type: "RNN"
+rnn_type: "SimpleRNN"
+embedding_dim: 64
+rnn_units: 128
+epochs: 50
+batch_size: 64
+dataset:
+  name: "shakespeare"
+  path: "benchmarking/models/datasets/${dataset.name}/data.py"
+  args:
+    sequence_length: 100
+    test_ratio: 0.2
+    random_seed: 42
+random_seed: 42

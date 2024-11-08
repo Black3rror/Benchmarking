@@ -1,0 +1,16 @@
+model_type: "TinyMLPerf_DS_CNN"
+load_pretrained_model: True
+# num_filters: 64
+# activation: "relu"
+# use_batch_norm: True
+epochs: 0
+batch_size: 100
+dataset:
+  name: "randomset_classification"
+  args:
+    n_samples: 10000
+    test_ratio: 0.2
+    feature_shape: [49, 10, 1]
+    num_labels: 12
+    random_seed: 42
+random_seed: 42

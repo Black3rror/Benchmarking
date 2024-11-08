@@ -1,0 +1,24 @@
+model_type: "CNN"
+convs_params: [
+  [16, [16, 1], [2, 1]],
+  [32, [5, 1], [1, 1]],
+  [0, 0, 0]
+]
+denses_params: [16]
+convs_dropout: 0.00
+denses_dropout: 0.00
+activation: "relu"
+use_batch_norm: True
+epochs: 10
+batch_size: 32
+dataset:
+  name: "cavitation"
+  args:
+    data_type: "fft"
+    problem_type: "regression"
+    window_size: 4096
+    test_sep_strategy: "record"
+    test_ratio: 0.2
+    flat_features: False
+    random_seed: 42
+random_seed: 42
