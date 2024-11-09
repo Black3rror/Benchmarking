@@ -467,7 +467,7 @@ def main():
 
         if not valid_ei_api_key:
             q = _Question("Edge Impulse information is missing. Please provide the API key",
-                          description="If you don't have an account, please create one at https://www.edgeimpulse.com. The API key can be found in the 'Keys' section of the project. You can also access this page by its address: https://studio.edgeimpulse.com/studio/{project_id}/keys",)
+                          description="If you don't have an account, please create one at https://www.edgeimpulse.com. The API key can be found in the 'Keys' section of the project. You can also access this page by its address: https://studio.edgeimpulse.com/studio/{project_id}/keys")
             q.check_response = lambda response: (True, response) if response.startswith("ei_") else (False, None)
             response = q.ask()
             _clear_console()
@@ -482,7 +482,7 @@ def main():
 
         if not valid_ei_project_id:
             q = _Question("Edge Impulse information is missing. Please provide the project ID",
-                          description="The project ID can be found in the main page of the project ('project info' section). You can also find it by looking at the URL of the page: https://studio.edgeimpulse.com/studio/{project_id}",)
+                          description="The project ID can be found in the main page of the project ('project info' section). You can also find it by looking at the URL of the page: https://studio.edgeimpulse.com/studio/{project_id}")
             q.check_response = lambda response: (True, response) if response.isdigit() else (False, None)
             response = q.ask()
             _clear_console()
@@ -586,7 +586,7 @@ def main():
 
         if not valid_stm32_programmer_path:
             q = _Question("Could not find a valid STM32 Programmer CLI path. Please provide the path to the STM32 Programmer CLI executable",
-                          description="STM32 Programmer CLI is a part of STM32CubeCLT. So, if you don't have STM32 Programmer CLI, you can download the STM32CubeCLT from https://www.st.com/en/development-tools/stm32cubeclt.html\nOnce you have installed it, the executable should be in {installation_dir}/STM32CubeCLT_{version}/STM32CubeProgrammer/bin/STM32_programmer_CLI.exe. For example, C:/ST/STM32CubeCLT_1.15.1/STM32CubeProgrammer/bin/STM32_programmer_CLI.exe\nThe project was tested against STM32CubeProgrammer version 2.16.0",)
+                          description="STM32 Programmer CLI is a part of STM32CubeCLT. So, if you don't have STM32 Programmer CLI, you can download the STM32CubeCLT from https://www.st.com/en/development-tools/stm32cubeclt.html\nOnce you have installed it, the executable should be in {installation_dir}/STM32CubeCLT_{version}/STM32CubeProgrammer/bin/STM32_programmer_CLI.exe. For example, C:/ST/STM32CubeCLT_1.15.1/STM32CubeProgrammer/bin/STM32_programmer_CLI.exe\nThe project was tested against STM32CubeProgrammer version 2.16.0")
             q.check_response = lambda response: (True, response) if os.path.exists(response) or os.path.exists(response + ".exe") else (False, None)
             response = q.ask()
             _clear_console()
@@ -609,7 +609,7 @@ def main():
 
         if not valid_e2studio_path:
             q = _Question("Could not find a valid e2 studio path. Please provide the path to the e2 studio executable",
-                          description="If you don't have e2 studio, you can download it from https://www.renesas.com/us/en/software-tool/e-studio\nOnce you have installed it, the executable should be {installation_dir}/Renesas/e2_studio/eclipse/e2studioc.exe. For example, C:/Renesas/e2_studio/eclipse/e2studioc.exe\nThe project was tested against e2 studio version 24.1.1",)
+                          description="If you don't have e2 studio, you can download it from https://www.renesas.com/us/en/software-tool/e-studio\nOnce you have installed it, the executable should be {installation_dir}/Renesas/e2_studio/eclipse/e2studioc.exe. For example, C:/Renesas/e2_studio/eclipse/e2studioc.exe\nThe project was tested against e2 studio version 24.1.1")
             q.check_response = lambda response: (True, response) if os.path.exists(response) or os.path.exists(response + ".exe") else (False, None)
             response = q.ask()
             _clear_console()
@@ -704,7 +704,7 @@ def main():
 
         if not valid_rfp_path:
             q = _Question("Could not find a valid Renesas Flash Programmer path. Please provide the path to the Renesas Flash Programmer executable",
-                          description="If you don't have Renesas Flash Programmer, you can download it from https://www.renesas.com/us/en/software-tool/renesas-flash-programmer-programming-gui#downloads\nOnce you have installed it, the executable should be {installation_dir}/Renesas Electronics/Programming Tools/Renesas Flash Programmer V{version}/RFPV{version}.exe. For example, C:/Program Files (x86)/Renesas Electronics/Programming Tools/Renesas Flash Programmer V3.15/RFPV3.exe\nThe project was tested against Renesas Flash Programmer version 3.15.00",)
+                          description="If you don't have Renesas Flash Programmer, you can download it from https://www.renesas.com/us/en/software-tool/renesas-flash-programmer-programming-gui#downloads\nOnce you have installed it, the executable should be {installation_dir}/Renesas Electronics/Programming Tools/Renesas Flash Programmer V{version}/RFPV{version}.exe. For example, C:/Program Files (x86)/Renesas Electronics/Programming Tools/Renesas Flash Programmer V3.15/RFPV3.exe\nThe project was tested against Renesas Flash Programmer version 3.15.00")
             q.check_response = lambda response: (True, response) if os.path.exists(response) or os.path.exists(response + ".exe") else (False, None)
             response = q.ask()
             _clear_console()
@@ -720,8 +720,8 @@ def main():
 
         if not valid_rfp_project_path:
             q = _Question("Could not find a valid Renesas Flash Programmer project path. Please provide the path to the Renesas Flash Programmer project file",
-                          description="The project file is a '.rpj' file that you can create in Renesas Flash Programmer.\nTo create a project file, open Renesas Flash Programmer and do the following steps:\n- File > New Project...\n- Microcontroller: RX65x\n- Tool: E2 emulator Lite\n- Interface: FINE\n- Tool Details... > Reset Settings > Reset signal at Disconnect: Reset Pin as Hi-Z\nOnce you have created the project, enter the path to the project file here",
-                          check_response=lambda response: (True, response) if response.endswith(".rpj") and os.path.exists(response) else (False, None))
+                          description="The project file is a '.rpj' file that you can create in Renesas Flash Programmer.\nTo create a project file, open Renesas Flash Programmer and do the following steps:\n- File > New Project...\n- Microcontroller: RX65x\n- Tool: E2 emulator Lite\n- Interface: FINE\n- Tool Details... > Reset Settings > Reset signal at Disconnect: Reset Pin as Hi-Z\nOnce you have created the project, enter the path to the project file here")
+            q.check_response = lambda response: (True, response) if response.endswith(".rpj") and os.path.exists(response) else (False, None)
             response = q.ask()
             _clear_console()
             print(page)
