@@ -26,7 +26,7 @@ Only TFLM could be used for these models (1). Also, all the models were deployed
 | GRU           | basic     | 20896      | 2094400 | 0        | 276.7367 | 496.984375  | 298.734375  |
 | GRU           | int8 only | 20896      | 2094400 | 0.044773 | 374.4158 | 809.7890625 | 295.359375  |
 
-:man_raising_hand: *Simple_1* is named *Simple* in figures.
+<!-- :man_raising_hand: *Simple_1* is named *Simple* in figures. -->
 
 <br/>
 

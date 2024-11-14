@@ -99,10 +99,7 @@ Model Type:
 
 - **Execution Time**: The *O3* and *Of* are the same and faster than *Os*.
 
-- **Flash Size**: The flash size of *Os* is slightly better than *O3* and *Of*. (1)
-{ .annotate }
-
-    1.  :man_raising_hand: The difference is in the program's base size (without the model) and vanishes as the model size increases.
+- **Flash Size**: The flash size of *Os* is slightly better than *O3* and *Of*.
 
 - **RAM Usage**: The required RAM of all optimization levels is almost the same.
 

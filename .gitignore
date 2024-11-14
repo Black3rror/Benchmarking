@@ -4,8 +4,10 @@
 /linkers/
 /tutorials/
 /results/
+/paper/
 /TODO.md
 /exploration_span.txt
+/saved_models.lnk
 
 /docs/source/figures/ignore/
 /docs/source/figures/**/*.pdf

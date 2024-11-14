@@ -5,7 +5,7 @@ convs_dropout: 0.00
 denses_dropout: 0.00
 activation: "sigmoid"
 use_batch_norm: False
-epochs: 50
+epochs: 5
 batch_size: 32
 dataset:
   name: "sinus"

@@ -172,9 +172,9 @@ Model Type:
 
 - **Flash Size**: STM is a bit better in terms of flash size.
 
-- **RAM Usage**: STM is better in terms of RAM usage.
+- **RAM Usage**: The two boards use almost the same amount of RAM.
 
-- **Conclusion**: The two boards seem to have a relatively similar performance. The STM board might be slightly better in some cases. (1)
+- **Conclusion**: The two boards seem to have a relatively similar performance. The Renesas board might be slightly faster, but the STM board has a bit smaller flash size. (1)
 { .annotate }
 
     1.  :man_raising_hand: These boards have many settings that might favor one over the other in certain cases. Our study was conducted in an almost default settings with a good optimization level, but it is not comprehensive enough to cover all possible scenarios.

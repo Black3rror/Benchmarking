@@ -14,11 +14,11 @@ Each test measures four key metrics:
 
 - Error: The error rate of the model. It is calculated as the average of the normalized absolute difference between the model's output and the expected output (the output produced when the model is run on a PC). To determine this, 10 different inputs are fed into the model, and the average error rate is computed. The standard deviation of the error rate is also included in the detailed results. An error rate below 0.05 is generally considered acceptable for a model.
 
-- Flash Size: The program's flash memory size. (1)
+- Flash Size: The model's flash memory size. (1)
 { .annotate }
 
     1.  :man_raising_hand: The GCC compiler reports the sizes of the *text*, *data*, and *bss* sections.
-    <p>By default, *Flash* = *text* + *data*, but since the tested tools have a negligible effect on the *data* section and the *data* section is primarily used for storing data samples (which we want exclude from affecting the flash size), we assume *Flash* = *text*.</p>
+    <p>By default, *Flash* = *text* + *data*, but since the tested tools have a negligible effect on the *data* section and the *data* section is primarily used for storing data samples (which we want exclude from affecting the flash size), we assume *Flash* = *text*. The reported values in graphs are the difference between flash of the programs and corresponding base programs. Hence, these values indicate the flash size of the tool and the model.</p>
     <p><ul>
         <li>For the NUCLEO-L4R5ZI C/C++ project, the base program (including printf and timer functionalities but without any model or library) occupies (text=28000, data=476, and bss=3568) bytes.</li>
         <li>For the Renesas RX65N C project, the base program occupies (text=30972, data=3508, and bss=7368) bytes.</li>
@@ -29,7 +29,7 @@ Each test measures four key metrics:
 - RAM Usage: The program's RAM usage. (1)
 { .annotate }
 
-    1.  :man_raising_hand: Since all tested tools follow a static memory allocation strategy, the RAM usage can be inferred from the GCC compiler's report. Typically, *RAM* = *data* + *bss*, but since the *data* section primarily holds data samples (which we do not want to affect RAM calculations), we assume *RAM* = *bss*.
+    1.  :man_raising_hand: Since all tested tools follow a static memory allocation strategy, the RAM usage can be inferred from the GCC compiler's report. Typically, *RAM* = *data* + *bss*, but since the *data* section primarily holds data samples (which we do not want to affect RAM calculations), we assume *RAM* = *bss*. The reported values in graphs are the difference between RAM of the programs and corresponding base programs. Hence, these values indicate the RAM size of the tool and the model.
     <p>For TFLM, we set the *arena_size* parameter, which modifies the size of the *bss* section. To find the minimum viable *arena_size* for each model, we incrementally increased the *arena_size* with a small step-size until the program ran successfully. The *bss* size of the program with the minimum *arena_size* is taken as the program's RAM usage.</p>
 
 !!! warning "Subjective Summary"
