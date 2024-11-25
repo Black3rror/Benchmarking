@@ -8,3 +8,4 @@ eqcheck_data_path: ${model_base_dir}/data/eqcheck_data.npz
 tflm_info_path: ${model_base_dir}/tflm/tflm_info.yaml
 tflm_templates_dir: edgemark/models/platforms/TFLM/TFLM_templates
 tflm_save_dir: ${model_base_dir}/tflm/${tflite_conversion_type}
+n_random_eqcheck_data: 10

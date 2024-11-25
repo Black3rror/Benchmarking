@@ -12,6 +12,7 @@ import tensorflow as tf
 import yaml
 from omegaconf import OmegaConf
 
+from edgemark.models.platforms.TFLite.TFLite_converter import save_random_eqcheck_data
 from edgemark.models.utils.utils import get_abs_path
 
 
@@ -259,6 +260,8 @@ def main(cfg_path=config_file_path, **kwargs):
 
                 try:
                     convert_model(cfg.tflite_model_path, model_type, "tflite-eon", cfg.ei_api_key, cfg.ei_project_id, cfg.ei_save_dir)
+                    if not os.path.exists(cfg.eqcheck_data_path):
+                        save_random_eqcheck_data(cfg.tflite_model_path, cfg.n_random_eqcheck_data, cfg.eqcheck_data_path)
                     create_data_source_files(cfg.eqcheck_data_path, cfg.data_templates_dir, cfg.ei_save_dir)
                     if os.path.exists(os.path.join(cfg.ei_save_dir, 'exception.txt')):
                         os.remove(os.path.join(cfg.ei_save_dir, 'exception.txt'))

@@ -294,6 +294,69 @@ def cluster(model_path, n_clusters):
     return stripped_model
 
 
+def save_random_eqcheck_data(model_path, n_samples, save_path):
+    """
+    Saves a random eqcheck data as {"data_x", "data_y_pred"}.
+
+    Args:
+        model_path (str): The path to the TFLite model.
+        n_samples (int): The number of samples to generate.
+        save_path (str): The npz file path to save the data.
+    """
+    interpreter = tf.lite.Interpreter(model_path=model_path)
+    interpreter.allocate_tensors()
+
+    input_details = interpreter.get_input_details()
+    output_details = interpreter.get_output_details()
+
+    in_scale, in_zero_point = input_details[0]['quantization']
+    out_scale, out_zero_point = output_details[0]['quantization']
+
+    rng = np.random.RandomState(42)
+    data_x = rng.rand(n_samples, *input_details[0]['shape'][1:]).astype(np.float32)
+
+    if input_details[0]['dtype'] is np.float32 and output_details[0]['dtype'] is np.float32:
+        pass
+    elif input_details[0]['dtype'] is np.int16 and output_details[0]['dtype'] is np.int16:
+        data_x = (data_x / in_scale) + in_zero_point
+        data_x = np.clip(data_x, -32768, 32767).astype(np.int16)
+    elif input_details[0]['dtype'] is np.int8 and output_details[0]['dtype'] is np.int8:
+        data_x = (data_x / in_scale) + in_zero_point
+        data_x = np.clip(data_x, -128, 127).astype(np.int8)
+    elif input_details[0]['dtype'] is np.uint8 and output_details[0]['dtype'] is np.uint8:
+        data_x = (data_x / in_scale) + in_zero_point
+        data_x = np.clip(data_x, 0, 255).astype(np.uint8)
+    else:
+        raise ValueError("Unknown input and output types: {} and {}".format(input_details[0]['dtype'], output_details[0]['dtype']))
+
+    data_y_pred = []
+    for i in range(n_samples):
+        interpreter.set_tensor(input_details[0]['index'], data_x[i:i+1])
+        interpreter.invoke()
+        sample_y_pred = interpreter.get_tensor(output_details[0]['index'])
+
+        if input_details[0]['dtype'] is np.float32 and output_details[0]['dtype'] is np.float32:
+            pass
+        elif input_details[0]['dtype'] is np.int16 and output_details[0]['dtype'] is np.int16:
+            sample_y_pred = sample_y_pred.astype(np.float32)
+            sample_y_pred = (sample_y_pred - out_zero_point) * out_scale
+        elif input_details[0]['dtype'] is np.int8 and output_details[0]['dtype'] is np.int8:
+            sample_y_pred = sample_y_pred.astype(np.float32)
+            sample_y_pred = (sample_y_pred - out_zero_point) * out_scale
+        elif input_details[0]['dtype'] is np.uint8 and output_details[0]['dtype'] is np.uint8:
+            sample_y_pred = sample_y_pred.astype(np.float32)
+            sample_y_pred = (sample_y_pred - out_zero_point) * out_scale
+        else:
+            raise ValueError("Unknown input and output types: {} and {}".format(input_details[0]['dtype'], output_details[0]['dtype']))
+
+        data_y_pred.append(sample_y_pred)
+
+    data_y_pred = np.array(data_y_pred)
+
+    os.makedirs(os.path.dirname(save_path), exist_ok=True)
+    np.savez(save_path, data_x=data_x, data_y_pred=data_y_pred)
+
+
 def _save_tflite_model(save_dir, tflite_model, delete_exception_file=False):
     """
     Save the TFLite model and its zipped format.

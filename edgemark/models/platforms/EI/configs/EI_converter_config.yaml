@@ -8,3 +8,4 @@ tflite_model_path: ${model_base_dir}/tflite/${tflite_conversion_type}/model.tfli
 eqcheck_data_path: ${model_base_dir}/data/eqcheck_data.npz
 data_templates_dir: edgemark/models/platforms/EI/EI_templates
 ei_save_dir: ${model_base_dir}/ei/${tflite_conversion_type}
+n_random_eqcheck_data: 10

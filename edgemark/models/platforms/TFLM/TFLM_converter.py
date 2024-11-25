@@ -8,6 +8,7 @@ import tensorflow as tf
 import yaml
 from omegaconf import OmegaConf
 
+from edgemark.models.platforms.TFLite.TFLite_converter import save_random_eqcheck_data
 from edgemark.models.utils.utils import get_abs_path
 
 
@@ -53,6 +54,8 @@ def create_tflm_source_files(tflite_model_path, eqcheck_data_path, tflm_info_pat
         in_out_dtype = "int16"
     elif input_details[0]['dtype'] is np.int8 and output_details[0]['dtype'] is np.int8:
         in_out_dtype = "int8"
+    elif input_details[0]['dtype'] is np.uint8 and output_details[0]['dtype'] is np.uint8:
+        in_out_dtype = "uint8"
     else:
         raise ValueError("Unknown input and output types: {} and {}".format(input_details[0]['dtype'], output_details[0]['dtype']))
 
@@ -76,6 +79,10 @@ def create_tflm_source_files(tflite_model_path, eqcheck_data_path, tflm_info_pat
     elif in_out_dtype == "int8":
         h_file = h_file.replace("{input_dtype}", "int8_t")
         h_file = h_file.replace("{output_dtype}", "int8_t")
+        h_file = h_file.replace("{arena_size}", str(tflm_info.arena_size["8bit"] + 10240))
+    elif in_out_dtype == "uint8":
+        h_file = h_file.replace("{input_dtype}", "uint8_t")
+        h_file = h_file.replace("{output_dtype}", "uint8_t")
         h_file = h_file.replace("{arena_size}", str(tflm_info.arena_size["8bit"] + 10240))
     elif in_out_dtype == "int16":
         h_file = h_file.replace("{input_dtype}", "int16_t")
@@ -176,6 +183,17 @@ def create_tflm_source_files(tflite_model_path, eqcheck_data_path, tflm_info_pat
         data_y = np.clip(data_y, -128, 127)
         data_x = data_x.astype(np.int8)
         data_y = data_y.astype(np.int8)
+    elif in_out_dtype == "uint8":
+        h_file = h_file.replace("{input_dtype}", "uint8_t")
+        h_file = h_file.replace("{output_dtype}", "uint8_t")
+        cpp_file = cpp_file.replace("{input_dtype}", "uint8_t")
+        cpp_file = cpp_file.replace("{output_dtype}", "uint8_t")
+        data_x = (data_x / in_scale) + in_zero_point
+        data_y = (data_y / out_scale) + out_zero_point
+        data_x = np.clip(data_x, 0, 255)
+        data_y = np.clip(data_y, 0, 255)
+        data_x = data_x.astype(np.uint8)
+        data_y = data_y.astype(np.uint8)
     elif in_out_dtype == "int16":
         h_file = h_file.replace("{input_dtype}", "int16_t")
         h_file = h_file.replace("{output_dtype}", "int16_t")
@@ -286,6 +304,8 @@ def main(cfg_path=config_file_path, **kwargs):
                 cfg.tflite_conversion_type = model_flavor
 
                 try:
+                    if not os.path.exists(cfg.eqcheck_data_path):
+                        save_random_eqcheck_data(cfg.tflite_model_path, cfg.n_random_eqcheck_data, cfg.eqcheck_data_path)
                     create_tflm_source_files(cfg.tflite_model_path, cfg.eqcheck_data_path, cfg.tflm_info_path, cfg.tflm_templates_dir, cfg.tflm_save_dir)
                     if os.path.exists(os.path.join(cfg.tflm_save_dir, 'exception.txt')):
                         os.remove(os.path.join(cfg.tflm_save_dir, 'exception.txt'))
