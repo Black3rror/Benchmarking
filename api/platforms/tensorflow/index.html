@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../figures/logo_bg_dark.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a40c8224.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -1830,7 +1830,7 @@ The configuration file that this path points to should contain the following key
 <span class="normal">203</span>
 <span class="normal">204</span>
 <span class="normal">205</span>
-<span class="normal">206</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">cfg_path</span><span class="o">=</span><span class="n">config_file_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="normal">206</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">cfg_path</span><span class="o">=</span><span class="n">config_file_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Generate, train, evaluate, and save models based on the given configuration file.</span>
 
@@ -2082,7 +2082,7 @@ The configuration file that this path points to should contain the following key
 <span class="normal">29</span>
 <span class="normal">30</span>
 <span class="normal">31</span>
-<span class="normal">32</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">save_models_list</span><span class="p">(</span><span class="n">models_list</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
+<span class="normal">32</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">save_models_list</span><span class="p">(</span><span class="n">models_list</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Saves the list of generated models.</span>
 
@@ -2764,13 +2764,13 @@ you should inherit from this class and implement its abstract functions.</p>
 <span class="normal">616</span>
 <span class="normal">617</span>
 <span class="normal">618</span>
-<span class="normal">619</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">ModelSupervisorTemplate</span><span class="p">:</span>
+<span class="normal">619</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ModelSupervisorTemplate</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This class is a template for TensorFlow models. In order to create a new model,</span>
 <span class="sd">    you should inherit from this class and implement its abstract functions.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Initializes the class.</span>
 <span class="sd">        The following attributes should be set in the __init__ function:</span>
@@ -2784,7 +2784,7 @@ you should inherit from this class and implement its abstract functions.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span> <span class="o">=</span> <span class="kc">None</span>
 
 
-    <span class="k">def</span> <span class="nf">set_configs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_configs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the configs from the given dictionary.</span>
 
@@ -2798,7 +2798,7 @@ you should inherit from this class and implement its abstract functions.</p>
 
 
     <span class="c1"># Optional function: Whether you implement this function or not depends on your application.</span>
-    <span class="k">def</span> <span class="nf">compile_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fine_tuning</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">compile_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fine_tuning</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compiles the model.</span>
 
@@ -2809,7 +2809,7 @@ you should inherit from this class and implement its abstract functions.</p>
 
 
     <span class="c1"># Optional function: Whether you implement this function or not depends on your application.</span>
-    <span class="k">def</span> <span class="nf">train_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fine_tuning</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">tensorboard_log_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">best_weights_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">use_wandb</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">train_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fine_tuning</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">tensorboard_log_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">best_weights_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">use_wandb</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Trains the model.</span>
 
@@ -2826,7 +2826,7 @@ you should inherit from this class and implement its abstract functions.</p>
 
 
     <span class="c1"># Optional function: Whether you implement this function or not depends on your application.</span>
-    <span class="k">def</span> <span class="nf">evaluate_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">evaluate_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Evaluates the model.</span>
 
@@ -2836,7 +2836,7 @@ you should inherit from this class and implement its abstract functions.</p>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 
 
-    <span class="k">def</span> <span class="nf">get_model_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_model_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the model info that can be anything important, including its configuration.</span>
 
@@ -2846,7 +2846,7 @@ you should inherit from this class and implement its abstract functions.</p>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 
 
-    <span class="k">def</span> <span class="nf">get_params_count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_params_count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the number of parameters in the model.</span>
 
@@ -2868,7 +2868,7 @@ you should inherit from this class and implement its abstract functions.</p>
         <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">total_params</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">trainable_params</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">non_trainable_params</span><span class="p">)</span>
 
 
-    <span class="k">def</span> <span class="nf">get_FLOPs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_FLOPs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the number of FLOPs of the model.</span>
 
@@ -2892,7 +2892,7 @@ you should inherit from this class and implement its abstract functions.</p>
         <span class="k">return</span> <span class="n">FLOPs</span>
 
 
-    <span class="k">def</span> <span class="nf">measure_execution_time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">measure_execution_time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Measures the execution time of the model.</span>
 <span class="sd">        The process starts by a warm-up phase for 100 iterations, then the execution time is measured for ~10 seconds.</span>
@@ -2921,7 +2921,7 @@ you should inherit from this class and implement its abstract functions.</p>
         <span class="k">return</span> <span class="n">execution_time</span>
 
 
-    <span class="k">def</span> <span class="nf">save_representative_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">save_representative_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Saves the representative data with shape (samples, *input_shape).</span>
 
@@ -2936,7 +2936,7 @@ you should inherit from this class and implement its abstract functions.</p>
 
     <span class="c1"># Optional function</span>
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">load_representative_data</span><span class="p">(</span><span class="n">load_dir</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">load_representative_data</span><span class="p">(</span><span class="n">load_dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Loads the representative data.</span>
 
@@ -2950,7 +2950,7 @@ you should inherit from this class and implement its abstract functions.</p>
         <span class="k">return</span> <span class="n">representative_data</span>
 
 
-    <span class="k">def</span> <span class="nf">save_eqcheck_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">save_eqcheck_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Saves the eqcheck data as {&quot;data_x&quot;, &quot;data_y_pred&quot;}.</span>
 
@@ -2973,7 +2973,7 @@ you should inherit from this class and implement its abstract functions.</p>
 
     <span class="c1"># Optional function</span>
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">load_eqcheck_data</span><span class="p">(</span><span class="n">load_dir</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">load_eqcheck_data</span><span class="p">(</span><span class="n">load_dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Loads the eqcheck data.</span>
 
@@ -2989,7 +2989,7 @@ you should inherit from this class and implement its abstract functions.</p>
         <span class="k">return</span> <span class="n">data_x</span><span class="p">,</span> <span class="n">data_y_pred</span>
 
 
-    <span class="k">def</span> <span class="nf">save_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">save_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Saves the model in two formats: Keras and SavedModel.</span>
 
@@ -3005,7 +3005,7 @@ you should inherit from this class and implement its abstract functions.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="s2">&quot;saved_model_format&quot;</span><span class="p">))</span>
 
 
-    <span class="k">def</span> <span class="nf">load_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">load_dir</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">load_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">load_dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Loads the model in the SavedModel format.</span>
 
@@ -3016,7 +3016,7 @@ you should inherit from this class and implement its abstract functions.</p>
 
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">log_model_to_wandb</span><span class="p">(</span><span class="n">model_dir</span><span class="p">,</span> <span class="n">model_save_name</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">log_model_to_wandb</span><span class="p">(</span><span class="n">model_dir</span><span class="p">,</span> <span class="n">model_save_name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Logs the model to W&amp;B.</span>
 
@@ -3030,7 +3030,7 @@ you should inherit from this class and implement its abstract functions.</p>
         <span class="n">wandb</span><span class="o">.</span><span class="n">log_artifact</span><span class="p">(</span><span class="n">model_artifact</span><span class="p">)</span>
 
 
-    <span class="k">def</span> <span class="nf">save_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">save_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Saves the model weights.</span>
 
@@ -3041,7 +3041,7 @@ you should inherit from this class and implement its abstract functions.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">save_weights</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="s2">&quot;weights&quot;</span><span class="p">))</span>
 
 
-    <span class="k">def</span> <span class="nf">load_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">load_dir</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">load_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">load_dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Loads the model weights.</span>
 
@@ -3052,7 +3052,7 @@ you should inherit from this class and implement its abstract functions.</p>
 
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">save_model_info</span><span class="p">(</span><span class="n">model_info</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">save_model_info</span><span class="p">(</span><span class="n">model_info</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Saves the model info.</span>
 
@@ -3066,7 +3066,7 @@ you should inherit from this class and implement its abstract functions.</p>
             <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">model_info</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 
-    <span class="k">def</span> <span class="nf">save_TFLM_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_path</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">save_TFLM_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_path</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Saves the information required by the TFLM converter as a YAML file.</span>
 <span class="sd">        This is to help TFLM converter in a later stage.</span>
@@ -3097,7 +3097,7 @@ you should inherit from this class and implement its abstract functions.</p>
             <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">TFLM_info</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 
-    <span class="k">def</span> <span class="nf">_get_training_callbacks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tensorboard_log_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">best_weights_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">use_wandb</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_training_callbacks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tensorboard_log_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">best_weights_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">use_wandb</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the training callbacks.</span>
 
@@ -3121,7 +3121,7 @@ you should inherit from this class and implement its abstract functions.</p>
         <span class="k">return</span> <span class="n">callbacks</span>
 
 
-    <span class="k">def</span> <span class="nf">_estimate_arena_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_estimate_arena_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Estimates the size of the arena for the TFLM model.</span>
 <span class="sd">        This is to help the TFLM converter in a later stage.</span>
@@ -3133,7 +3133,7 @@ you should inherit from this class and implement its abstract functions.</p>
 
         <span class="c1"># Note: Assuming a Sequential model. Also, assuming that TFLM is wise to do in-place operations if possible.</span>
 
-        <span class="k">def</span> <span class="nf">_mul_dims</span><span class="p">(</span><span class="n">dims</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">_mul_dims</span><span class="p">(</span><span class="n">dims</span><span class="p">):</span>
             <span class="n">output</span> <span class="o">=</span> <span class="mi">1</span>
             <span class="k">for</span> <span class="n">dim</span> <span class="ow">in</span> <span class="n">dims</span><span class="p">:</span>
                 <span class="n">output</span> <span class="o">*=</span> <span class="n">dim</span>
@@ -3198,7 +3198,7 @@ you should inherit from this class and implement its abstract functions.</p>
         <span class="k">return</span> <span class="n">arena_size</span>
 
 
-    <span class="k">def</span> <span class="nf">_get_op_resolver_funcs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_op_resolver_funcs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the operators needed to run the TFLM model.</span>
 <span class="sd">        This is to help the TFLM converter in a later stage.</span>
@@ -3445,7 +3445,7 @@ The following attributes should be set in the <strong>init</strong> function:
 <span class="normal">30</span>
 <span class="normal">31</span>
 <span class="normal">32</span>
-<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Initializes the class.</span>
 <span class="sd">    The following attributes should be set in the __init__ function:</span>
@@ -3518,7 +3518,7 @@ The following attributes should be set in the <strong>init</strong> function:
 <span class="normal">54</span>
 <span class="normal">55</span>
 <span class="normal">56</span>
-<span class="normal">57</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">compile_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fine_tuning</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="normal">57</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">compile_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fine_tuning</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Compiles the model.</span>
 
@@ -3579,7 +3579,7 @@ The following attributes should be set in the <strong>init</strong> function:
 <span class="normal">82</span>
 <span class="normal">83</span>
 <span class="normal">84</span>
-<span class="normal">85</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">evaluate_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="normal">85</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">evaluate_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Evaluates the model.</span>
 
@@ -3654,7 +3654,7 @@ The following attributes should be set in the <strong>init</strong> function:
 <span class="normal">138</span>
 <span class="normal">139</span>
 <span class="normal">140</span>
-<span class="normal">141</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_FLOPs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="normal">141</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_FLOPs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the number of FLOPs of the model.</span>
 
@@ -3729,7 +3729,7 @@ The following attributes should be set in the <strong>init</strong> function:
 <span class="normal">92</span>
 <span class="normal">93</span>
 <span class="normal">94</span>
-<span class="normal">95</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_model_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="normal">95</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_model_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the model info that can be anything important, including its configuration.</span>
 
@@ -3802,7 +3802,7 @@ The following attributes should be set in the <strong>init</strong> function:
 <span class="normal">114</span>
 <span class="normal">115</span>
 <span class="normal">116</span>
-<span class="normal">117</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_params_count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="normal">117</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_params_count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the number of parameters in the model.</span>
 
@@ -3918,7 +3918,7 @@ The following attributes should be set in the <strong>init</strong> function:
 <span class="normal">236</span>
 <span class="normal">237</span>
 <span class="normal">238</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
-<span class="k">def</span> <span class="nf">load_eqcheck_data</span><span class="p">(</span><span class="n">load_dir</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_eqcheck_data</span><span class="p">(</span><span class="n">load_dir</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Loads the eqcheck data.</span>
 
@@ -3993,7 +3993,7 @@ The following attributes should be set in the <strong>init</strong> function:
 <span class="normal">261</span>
 <span class="normal">262</span>
 <span class="normal">263</span>
-<span class="normal">264</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">load_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">load_dir</span><span class="p">):</span>
+<span class="normal">264</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">load_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">load_dir</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Loads the model in the SavedModel format.</span>
 
@@ -4095,7 +4095,7 @@ The following attributes should be set in the <strong>init</strong> function:
 <span class="normal">197</span>
 <span class="normal">198</span>
 <span class="normal">199</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
-<span class="k">def</span> <span class="nf">load_representative_data</span><span class="p">(</span><span class="n">load_dir</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_representative_data</span><span class="p">(</span><span class="n">load_dir</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Loads the representative data.</span>
 
@@ -4168,7 +4168,7 @@ The following attributes should be set in the <strong>init</strong> function:
 <span class="normal">297</span>
 <span class="normal">298</span>
 <span class="normal">299</span>
-<span class="normal">300</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">load_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">load_dir</span><span class="p">):</span>
+<span class="normal">300</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">load_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">load_dir</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Loads the model weights.</span>
 
@@ -4263,7 +4263,7 @@ The following attributes should be set in the <strong>init</strong> function:
 <span class="normal">277</span>
 <span class="normal">278</span>
 <span class="normal">279</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
-<span class="k">def</span> <span class="nf">log_model_to_wandb</span><span class="p">(</span><span class="n">model_dir</span><span class="p">,</span> <span class="n">model_save_name</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">log_model_to_wandb</span><span class="p">(</span><span class="n">model_dir</span><span class="p">,</span> <span class="n">model_save_name</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Logs the model to W&amp;B.</span>
 
@@ -4348,7 +4348,7 @@ The process starts by a warm-up phase for 100 iterations, then the execution tim
 <span class="normal">167</span>
 <span class="normal">168</span>
 <span class="normal">169</span>
-<span class="normal">170</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">measure_execution_time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="normal">170</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">measure_execution_time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Measures the execution time of the model.</span>
 <span class="sd">    The process starts by a warm-up phase for 100 iterations, then the execution time is measured for ~10 seconds.</span>
@@ -4458,7 +4458,7 @@ This is to help TFLM converter in a later stage.</p>
 <span class="normal">343</span>
 <span class="normal">344</span>
 <span class="normal">345</span>
-<span class="normal">346</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">save_TFLM_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_path</span><span class="p">):</span>
+<span class="normal">346</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">save_TFLM_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_path</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Saves the information required by the TFLM converter as a YAML file.</span>
 <span class="sd">    This is to help TFLM converter in a later stage.</span>
@@ -4576,7 +4576,7 @@ This is to help TFLM converter in a later stage.</p>
 <span class="normal">217</span>
 <span class="normal">218</span>
 <span class="normal">219</span>
-<span class="normal">220</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">save_eqcheck_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
+<span class="normal">220</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">save_eqcheck_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Saves the eqcheck data as {&quot;data_x&quot;, &quot;data_y_pred&quot;}.</span>
 
@@ -4662,7 +4662,7 @@ This is to help TFLM converter in a later stage.</p>
 <span class="normal">251</span>
 <span class="normal">252</span>
 <span class="normal">253</span>
-<span class="normal">254</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">save_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
+<span class="normal">254</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">save_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Saves the model in two formats: Keras and SavedModel.</span>
 
@@ -4763,7 +4763,7 @@ This is to help TFLM converter in a later stage.</p>
 <span class="normal">313</span>
 <span class="normal">314</span>
 <span class="normal">315</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
-<span class="k">def</span> <span class="nf">save_model_info</span><span class="p">(</span><span class="n">model_info</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">save_model_info</span><span class="p">(</span><span class="n">model_info</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Saves the model info.</span>
 
@@ -4855,7 +4855,7 @@ This is to help TFLM converter in a later stage.</p>
 <span class="normal">180</span>
 <span class="normal">181</span>
 <span class="normal">182</span>
-<span class="normal">183</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">save_representative_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
+<span class="normal">183</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">save_representative_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Saves the representative data with shape (samples, *input_shape).</span>
 
@@ -4928,7 +4928,7 @@ This is to help TFLM converter in a later stage.</p>
 <span class="normal">287</span>
 <span class="normal">288</span>
 <span class="normal">289</span>
-<span class="normal">290</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">save_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
+<span class="normal">290</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">save_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Saves the model weights.</span>
 
@@ -5003,7 +5003,7 @@ In case you want to change them, you should call the corresponding functions.</p
 <span class="normal">43</span>
 <span class="normal">44</span>
 <span class="normal">45</span>
-<span class="normal">46</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">set_configs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="p">):</span>
+<span class="normal">46</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">set_configs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Sets the configs from the given dictionary.</span>
 
@@ -5152,7 +5152,7 @@ In case you want to change them, you should call the corresponding functions.</p
 <span class="normal">71</span>
 <span class="normal">72</span>
 <span class="normal">73</span>
-<span class="normal">74</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">train_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fine_tuning</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">tensorboard_log_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">best_weights_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">use_wandb</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="normal">74</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">train_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fine_tuning</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">tensorboard_log_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">best_weights_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">use_wandb</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Trains the model.</span>
 
@@ -5274,10 +5274,10 @@ In case you want to change them, you should call the corresponding functions.</p
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.indexes", "navigation.footer", "content.code.copy", "content.code.annotate", "content.tooltips", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.indexes", "navigation.footer", "content.code.copy", "content.code.annotate", "content.tooltips", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.60a45f97.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});

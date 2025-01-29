@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../figures/logo_bg_dark.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a40c8224.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -1450,7 +1450,7 @@ The data related to inactive sheets, models, and model types will be excluded.</
 <span class="normal">198</span>
 <span class="normal">199</span>
 <span class="normal">200</span>
-<span class="normal">201</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">collect_data</span><span class="p">(</span><span class="n">data_file_path</span><span class="p">):</span>
+<span class="normal">201</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">collect_data</span><span class="p">(</span><span class="n">data_file_path</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Collects the data from an excel (xlsx) file.</span>
 <span class="sd">    The data related to inactive sheets, models, and model types will be excluded.</span>
@@ -1465,7 +1465,7 @@ The data related to inactive sheets, models, and model types will be excluded.</
 <span class="sd">            - models_metadata (dict): The metadata of the models. It will be in the following format:</span>
 <span class="sd">                {model_name: {&quot;display_name&quot;, &quot;parameters&quot;, &quot;MACs&quot;}}</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">_resolve_merged_cells</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_resolve_merged_cells</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
         <span class="n">wb</span> <span class="o">=</span> <span class="n">openpyxl</span><span class="o">.</span><span class="n">load_workbook</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
         <span class="n">xls</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
@@ -1493,7 +1493,7 @@ The data related to inactive sheets, models, and model types will be excluded.</
 
         <span class="k">return</span> <span class="n">resolved_dfs</span>
 
-    <span class="k">def</span> <span class="nf">_replace_nan_with_none</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_replace_nan_with_none</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
         <span class="k">return</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">else</span> <span class="n">value</span>
 
     <span class="n">sheets</span> <span class="o">=</span> <span class="n">_resolve_merged_cells</span><span class="p">(</span><span class="n">data_file_path</span><span class="p">)</span>
@@ -1746,7 +1746,7 @@ The data related to inactive sheets, models, and model types will be excluded.</
 <span class="normal">218</span>
 <span class="normal">219</span>
 <span class="normal">220</span>
-<span class="normal">221</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">fill_plot_gaps</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+<span class="normal">221</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">fill_plot_gaps</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function fills the gap caused by the None values with a dashed line.</span>
 
@@ -2100,7 +2100,7 @@ The data related to inactive sheets, models, and model types will be excluded.</
 <span class="normal">543</span>
 <span class="normal">544</span>
 <span class="normal">545</span>
-<span class="normal">546</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">data_file_path</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
+<span class="normal">546</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">data_file_path</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function plots the results of the benchmarking test.</span>
 
@@ -2463,7 +2463,7 @@ Note: The attributes of the figure will be changed after using this function.</p
 <span class="normal">274</span>
 <span class="normal">275</span>
 <span class="normal">276</span>
-<span class="normal">277</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">save_dark</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">file_path</span><span class="p">):</span>
+<span class="normal">277</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">save_dark</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">file_path</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Save the figure with a dark background.</span>
 <span class="sd">    Note: The attributes of the figure will be changed after using this function.</span>
@@ -2585,7 +2585,7 @@ Note: The attributes of the figure will be changed after using this function.</p
 <span class="normal">246</span>
 <span class="normal">247</span>
 <span class="normal">248</span>
-<span class="normal">249</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">save_light</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">file_path</span><span class="p">):</span>
+<span class="normal">249</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">save_light</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">file_path</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Save the figure with a light background.</span>
 <span class="sd">    Note: The attributes of the figure will be changed after using this function.</span>
@@ -2694,10 +2694,10 @@ Note: The attributes of the figure will be changed after using this function.</p
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.indexes", "navigation.footer", "content.code.copy", "content.code.annotate", "content.tooltips", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.indexes", "navigation.footer", "content.code.copy", "content.code.annotate", "content.tooltips", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.60a45f97.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});

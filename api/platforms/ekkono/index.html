@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../figures/logo_bg_dark.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a40c8224.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -1680,7 +1680,7 @@ The configuration file that this path points to should contain the following key
 <span class="normal">150</span>
 <span class="normal">151</span>
 <span class="normal">152</span>
-<span class="normal">153</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">cfg_path</span><span class="o">=</span><span class="n">config_file_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="normal">153</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">cfg_path</span><span class="o">=</span><span class="n">config_file_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Generate, train, evaluate, and save models based on the given configuration file.</span>
 
@@ -2398,8 +2398,8 @@ The configuration file that this path points to should contain the following key
 <span class="normal">528</span>
 <span class="normal">529</span>
 <span class="normal">530</span>
-<span class="normal">531</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">ModelSupervisor</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="normal">531</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ModelSupervisor</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Initializes the class.</span>
 <span class="sd">        The following attributes should be set in the __init__ function:</span>
@@ -2464,7 +2464,7 @@ The configuration file that this path points to should contain the following key
 
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">_create_ekkono_datasets</span><span class="p">(</span><span class="n">dataset</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_create_ekkono_datasets</span><span class="p">(</span><span class="n">dataset</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates Ekkono datasets based on the given dataset.</span>
 
@@ -2505,7 +2505,7 @@ The configuration file that this path points to should contain the following key
         <span class="k">return</span> <span class="p">(</span><span class="n">trainset</span><span class="p">,</span> <span class="n">testset</span><span class="p">),</span> <span class="s2">&quot;y&quot;</span>
 
 
-    <span class="k">def</span> <span class="nf">set_configs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_configs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the configurations of the model.</span>
 
@@ -2556,7 +2556,7 @@ The configuration file that this path points to should contain the following key
 
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">create_pretrained_model</span><span class="p">(</span><span class="n">denses_params</span><span class="p">,</span> <span class="n">activation</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">pipeline_template</span><span class="p">,</span> <span class="n">target_name</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_pretrained_model</span><span class="p">(</span><span class="n">denses_params</span><span class="p">,</span> <span class="n">activation</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">pipeline_template</span><span class="p">,</span> <span class="n">target_name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates the Ekkono pretrained model. The model is not able to be trained on the end device.</span>
 
@@ -2591,7 +2591,7 @@ The configuration file that this path points to should contain the following key
 
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">create_incremental_model</span><span class="p">(</span><span class="n">denses_params</span><span class="p">,</span> <span class="n">activation</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">trainset</span><span class="p">,</span> <span class="n">target_name</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_incremental_model</span><span class="p">(</span><span class="n">denses_params</span><span class="p">,</span> <span class="n">activation</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">trainset</span><span class="p">,</span> <span class="n">target_name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates the Ekkono incremental model. The model is able to be trained on the end device.</span>
 
@@ -2634,7 +2634,7 @@ The configuration file that this path points to should contain the following key
 
 
     <span class="c1"># Optional function: Whether you implement this function or not depends on your application.</span>
-    <span class="k">def</span> <span class="nf">train_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">train_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Trains the model.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -2642,7 +2642,7 @@ The configuration file that this path points to should contain the following key
 
 
     <span class="c1"># Optional function: Whether you implement this function or not depends on your application.</span>
-    <span class="k">def</span> <span class="nf">evaluate_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">evaluate_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Evaluates the model.</span>
 
@@ -2666,7 +2666,7 @@ The configuration file that this path points to should contain the following key
         <span class="k">return</span> <span class="n">output</span>
 
 
-    <span class="k">def</span> <span class="nf">get_model_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_model_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the model info.</span>
 
@@ -2689,7 +2689,7 @@ The configuration file that this path points to should contain the following key
         <span class="k">return</span> <span class="n">model_info</span>
 
 
-    <span class="k">def</span> <span class="nf">_estimate_arena_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_estimate_arena_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Estimates the size of the arena for the TFLM model.</span>
 
@@ -2706,7 +2706,7 @@ The configuration file that this path points to should contain the following key
         <span class="k">return</span> <span class="n">arena_size</span>
 
 
-    <span class="k">def</span> <span class="nf">measure_execution_time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">measure_execution_time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Measures the execution time of the model.</span>
 
@@ -2740,7 +2740,7 @@ The configuration file that this path points to should contain the following key
         <span class="k">return</span> <span class="n">execution_time</span>
 
 
-    <span class="k">def</span> <span class="nf">save_eqcheck_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">save_eqcheck_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Saves the eqcheck data as {&quot;data_x&quot;, &quot;data_y_pred&quot;}.</span>
 
@@ -2763,7 +2763,7 @@ The configuration file that this path points to should contain the following key
 
     <span class="c1"># Optional function</span>
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">load_eqcheck_data</span><span class="p">(</span><span class="n">load_dir</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">load_eqcheck_data</span><span class="p">(</span><span class="n">load_dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Loads the eqcheck data.</span>
 
@@ -2779,7 +2779,7 @@ The configuration file that this path points to should contain the following key
         <span class="k">return</span> <span class="n">data_x</span><span class="p">,</span> <span class="n">data_y_pred</span>
 
 
-    <span class="k">def</span> <span class="nf">save_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">save_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Saves the model.</span>
 
@@ -2790,7 +2790,7 @@ The configuration file that this path points to should contain the following key
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="s2">&quot;model.edge&quot;</span><span class="p">))</span>
 
 
-    <span class="k">def</span> <span class="nf">load_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">load_dir</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">load_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">load_dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Loads the model.</span>
 
@@ -2804,7 +2804,7 @@ The configuration file that this path points to should contain the following key
 
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">log_model_to_wandb</span><span class="p">(</span><span class="n">model_dir</span><span class="p">,</span> <span class="n">model_save_name</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">log_model_to_wandb</span><span class="p">(</span><span class="n">model_dir</span><span class="p">,</span> <span class="n">model_save_name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Logs the model to wandb.</span>
 
@@ -2819,7 +2819,7 @@ The configuration file that this path points to should contain the following key
 
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">save_model_info</span><span class="p">(</span><span class="n">model_info</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">save_model_info</span><span class="p">(</span><span class="n">model_info</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Saves the model info.</span>
 
@@ -2833,7 +2833,7 @@ The configuration file that this path points to should contain the following key
             <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">model_info</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 
-    <span class="k">def</span> <span class="nf">fill_crystal_templates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">,</span> <span class="n">eqcheck_data_dir</span><span class="p">,</span> <span class="n">templates_dir</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fill_crystal_templates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">,</span> <span class="n">eqcheck_data_dir</span><span class="p">,</span> <span class="n">templates_dir</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Taken from the main.h/c and data.h/c available in the templates_dir, fills their</span>
 <span class="sd">        placeholders with the appropriate data and saves them to the save_dir.</span>
@@ -2843,7 +2843,7 @@ The configuration file that this path points to should contain the following key
 <span class="sd">            eqcheck_data_dir (str): The directory where the eqcheck data is stored.</span>
 <span class="sd">            templates_dir (str): The directory where the templates are stored.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">def</span> <span class="nf">_np_to_c</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">_np_to_c</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">array</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">array</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
             <span class="n">c_array</span> <span class="o">=</span> <span class="s2">&quot;{&quot;</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_np_to_c</span><span class="p">(</span><span class="n">subarray</span><span class="p">)</span> <span class="k">for</span> <span class="n">subarray</span> <span class="ow">in</span> <span class="n">array</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;}&quot;</span>
@@ -3046,7 +3046,7 @@ The following attributes should be set in the <strong>init</strong> function:
 <span class="normal">70</span>
 <span class="normal">71</span>
 <span class="normal">72</span>
-<span class="normal">73</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="normal">73</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Initializes the class.</span>
 <span class="sd">    The following attributes should be set in the __init__ function:</span>
@@ -3303,7 +3303,7 @@ The following attributes should be set in the <strong>init</strong> function:
 <span class="normal">241</span>
 <span class="normal">242</span>
 <span class="normal">243</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
-<span class="k">def</span> <span class="nf">create_incremental_model</span><span class="p">(</span><span class="n">denses_params</span><span class="p">,</span> <span class="n">activation</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">trainset</span><span class="p">,</span> <span class="n">target_name</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_incremental_model</span><span class="p">(</span><span class="n">denses_params</span><span class="p">,</span> <span class="n">activation</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">trainset</span><span class="p">,</span> <span class="n">target_name</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Creates the Ekkono incremental model. The model is able to be trained on the end device.</span>
 
@@ -3482,7 +3482,7 @@ The following attributes should be set in the <strong>init</strong> function:
 <span class="normal">198</span>
 <span class="normal">199</span>
 <span class="normal">200</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
-<span class="k">def</span> <span class="nf">create_pretrained_model</span><span class="p">(</span><span class="n">denses_params</span><span class="p">,</span> <span class="n">activation</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">pipeline_template</span><span class="p">,</span> <span class="n">target_name</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_pretrained_model</span><span class="p">(</span><span class="n">denses_params</span><span class="p">,</span> <span class="n">activation</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">pipeline_template</span><span class="p">,</span> <span class="n">target_name</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Creates the Ekkono pretrained model. The model is not able to be trained on the end device.</span>
 
@@ -3581,7 +3581,7 @@ The following attributes should be set in the <strong>init</strong> function:
 <span class="normal">273</span>
 <span class="normal">274</span>
 <span class="normal">275</span>
-<span class="normal">276</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">evaluate_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="normal">276</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">evaluate_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Evaluates the model.</span>
 
@@ -3775,7 +3775,7 @@ placeholders with the appropriate data and saves them to the save_dir.</p>
 <span class="normal">528</span>
 <span class="normal">529</span>
 <span class="normal">530</span>
-<span class="normal">531</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">fill_crystal_templates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">,</span> <span class="n">eqcheck_data_dir</span><span class="p">,</span> <span class="n">templates_dir</span><span class="p">):</span>
+<span class="normal">531</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">fill_crystal_templates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">,</span> <span class="n">eqcheck_data_dir</span><span class="p">,</span> <span class="n">templates_dir</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Taken from the main.h/c and data.h/c available in the templates_dir, fills their</span>
 <span class="sd">    placeholders with the appropriate data and saves them to the save_dir.</span>
@@ -3785,7 +3785,7 @@ placeholders with the appropriate data and saves them to the save_dir.</p>
 <span class="sd">        eqcheck_data_dir (str): The directory where the eqcheck data is stored.</span>
 <span class="sd">        templates_dir (str): The directory where the templates are stored.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">_np_to_c</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_np_to_c</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">array</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">array</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
         <span class="n">c_array</span> <span class="o">=</span> <span class="s2">&quot;{&quot;</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_np_to_c</span><span class="p">(</span><span class="n">subarray</span><span class="p">)</span> <span class="k">for</span> <span class="n">subarray</span> <span class="ow">in</span> <span class="n">array</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;}&quot;</span>
@@ -3927,7 +3927,7 @@ placeholders with the appropriate data and saves them to the save_dir.</p>
 <span class="normal">296</span>
 <span class="normal">297</span>
 <span class="normal">298</span>
-<span class="normal">299</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_model_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="normal">299</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_model_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the model info.</span>
 
@@ -4044,7 +4044,7 @@ placeholders with the appropriate data and saves them to the save_dir.</p>
 <span class="normal">387</span>
 <span class="normal">388</span>
 <span class="normal">389</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
-<span class="k">def</span> <span class="nf">load_eqcheck_data</span><span class="p">(</span><span class="n">load_dir</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_eqcheck_data</span><span class="p">(</span><span class="n">load_dir</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Loads the eqcheck data.</span>
 
@@ -4122,7 +4122,7 @@ placeholders with the appropriate data and saves them to the save_dir.</p>
 <span class="normal">410</span>
 <span class="normal">411</span>
 <span class="normal">412</span>
-<span class="normal">413</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">load_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">load_dir</span><span class="p">):</span>
+<span class="normal">413</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">load_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">load_dir</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Loads the model.</span>
 
@@ -4220,7 +4220,7 @@ placeholders with the appropriate data and saves them to the save_dir.</p>
 <span class="normal">426</span>
 <span class="normal">427</span>
 <span class="normal">428</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
-<span class="k">def</span> <span class="nf">log_model_to_wandb</span><span class="p">(</span><span class="n">model_dir</span><span class="p">,</span> <span class="n">model_save_name</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">log_model_to_wandb</span><span class="p">(</span><span class="n">model_dir</span><span class="p">,</span> <span class="n">model_save_name</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Logs the model to wandb.</span>
 
@@ -4309,7 +4309,7 @@ placeholders with the appropriate data and saves them to the save_dir.</p>
 <span class="normal">347</span>
 <span class="normal">348</span>
 <span class="normal">349</span>
-<span class="normal">350</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">measure_execution_time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="normal">350</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">measure_execution_time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Measures the execution time of the model.</span>
 
@@ -4430,7 +4430,7 @@ placeholders with the appropriate data and saves them to the save_dir.</p>
 <span class="normal">368</span>
 <span class="normal">369</span>
 <span class="normal">370</span>
-<span class="normal">371</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">save_eqcheck_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
+<span class="normal">371</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">save_eqcheck_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Saves the eqcheck data as {&quot;data_x&quot;, &quot;data_y_pred&quot;}.</span>
 
@@ -4511,7 +4511,7 @@ placeholders with the appropriate data and saves them to the save_dir.</p>
 <span class="normal">397</span>
 <span class="normal">398</span>
 <span class="normal">399</span>
-<span class="normal">400</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">save_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
+<span class="normal">400</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">save_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Saves the model.</span>
 
@@ -4607,7 +4607,7 @@ placeholders with the appropriate data and saves them to the save_dir.</p>
 <span class="normal">441</span>
 <span class="normal">442</span>
 <span class="normal">443</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@staticmethod</span>
-<span class="k">def</span> <span class="nf">save_model_info</span><span class="p">(</span><span class="n">model_info</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">save_model_info</span><span class="p">(</span><span class="n">model_info</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Saves the model info.</span>
 
@@ -4722,7 +4722,7 @@ In case you want to change them, you should call the corresponding functions.</p
 <span class="normal">162</span>
 <span class="normal">163</span>
 <span class="normal">164</span>
-<span class="normal">165</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">set_configs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="p">):</span>
+<span class="normal">165</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">set_configs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Sets the configurations of the model.</span>
 
@@ -4797,7 +4797,7 @@ In case you want to change them, you should call the corresponding functions.</p
 <span class="normal">248</span>
 <span class="normal">249</span>
 <span class="normal">250</span>
-<span class="normal">251</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">train_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="normal">251</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">train_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Trains the model.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -4910,10 +4910,10 @@ In case you want to change them, you should call the corresponding functions.</p
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.indexes", "navigation.footer", "content.code.copy", "content.code.annotate", "content.tooltips", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.indexes", "navigation.footer", "content.code.copy", "content.code.annotate", "content.tooltips", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.60a45f97.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
